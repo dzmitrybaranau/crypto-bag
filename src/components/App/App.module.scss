@@ -1,0 +1,29 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  min-height: 100vh;
+  padding: 32px 16px;
+  margin: 0 auto;
+  background: linear-gradient(125deg, #604032, #38231c);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.totalBalanceWrapper {
+  margin-bottom: 16px;
+}
+
+.actionButtonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  button {
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
