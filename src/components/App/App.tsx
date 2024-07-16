@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./App.module.scss";
 import TotalBalance from "@/components/TotalBalance/TotalBalance";
 import Button from "@/components/TotalBalance/components/Button/Button";
+import TokenList from "@/components/TokensList/TokenList";
 
 export interface IAppProps {}
 
@@ -41,7 +42,7 @@ function App(props: IAppProps) {
           - Sell
         </Button>
       </div>
-      <div> Tokens List</div>
+      <TokenList />
     </div>
   );
 }

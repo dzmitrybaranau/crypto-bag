@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  border-radius: 16px;
+  background: #FFF6D6;
+  box-shadow: inset 0px -2px 0px #fed521;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  background: #FFFCE5;
+  border-radius: 8px;
+  margin-right: 12px;
+  border: 1px solid #FED521
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+
+  b {
+    font-size: 16px;
+  }
+}

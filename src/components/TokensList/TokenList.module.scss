@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  b {
+    color: #FFFCE5;
+    margin-left: 12px;
+    font-weight: 500;
+  }
+}

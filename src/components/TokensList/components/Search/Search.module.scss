@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  color: #fffce5;
+  opacity: 0.5;
+  border-radius: 20px;
+  border: 1px solid #fffce5;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.searchIcon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(45deg);
+  margin-right: 8px;
+}
+
+.circle {
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  border: 1px solid #fff6d6;
+}
+
+.stick {
+  width: 5px;
+  height: 1px;
+  background: #fff6d6;
+}
