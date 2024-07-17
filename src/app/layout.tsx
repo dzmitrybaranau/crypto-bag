@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import './global.css'
+import "./global.css";
+import WebAppReady from "@/components/WebAppReady/WebAppReady";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <WebAppReady />
       <body className={inter.className}>{children}</body>
     </html>
   );
