@@ -14,9 +14,7 @@ function TokenList(props: ITokenListProps) {
     <div className={styles.root}>
       <div className={styles.heading}>
         <b>Token</b>
-        <div>
-          <Search />
-        </div>
+        <Search />
       </div>
       <TokenRow />
     </div>
