@@ -22,6 +22,7 @@ function App(props: IAppProps) {
           cssProps={{
             height: 48,
             background: "#FEB321",
+              color: "",
             fontSize: "20px",
             fontWeight: 500,
             boxShadow:

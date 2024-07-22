@@ -25,7 +25,7 @@ interface IFormInterface {
  * Add Token Modal
  */
 function AddTokenModal(props: IAddTokenModalProps) {
-  const [isBuyOpen, setIsBuyOpen] = useState(true);
+  const [isBuyOpen, setIsBuyOpen] = useState(false);
 
   const handleOpenBuy = () => {
     console.log("OPEN");
