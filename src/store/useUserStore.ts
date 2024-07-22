@@ -7,6 +7,9 @@ interface UserStore {
   userTmaInfo?: typeof WebApp.initDataUnsafe;
   fetchUserAccount: (chatId: string) => Promise<void>;
   setUserTmaInfo: (userTmaInfo: typeof WebApp.initDataUnsafe) => void;
+  userAccount?: {
+    tokens: string[];
+  };
 }
 
 export const useUserStore = create<UserStore>((set) => ({

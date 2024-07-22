@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./App.module.scss";
 import TotalBalance from "@/components/TotalBalance/TotalBalance";
 import Button from "@/components/TotalBalance/components/Button/Button";
 import TokenList from "@/components/TokensList/TokenList";
+import AddTokenModal from "@/components/AddTokenModal/AddTokenModal";
 
 export interface IAppProps {}
 
@@ -10,25 +11,13 @@ export interface IAppProps {}
  * App
  */
 function App(props: IAppProps) {
-  const {} = props;
   return (
     <div className={styles.wrapper}>
       <div className={styles.totalBalanceWrapper}>
         <TotalBalance />
       </div>
       <div className={styles.actionButtonsWrapper}>
-        <Button
-          cssProps={{
-            height: 48,
-            background: "#FED521",
-            fontSize: "20px",
-            fontWeight: 500,
-            boxShadow:
-              "0px 4px 4px rgba(0,0,0, 0.25), inset 0px -4px 2px #FEB321",
-          }}
-        >
-          + Buy
-        </Button>
+        <AddTokenModal />
         <Button
           cssProps={{
             height: 48,

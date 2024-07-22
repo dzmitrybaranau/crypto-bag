@@ -10,9 +10,9 @@ export interface IButtonProps extends ButtonHTMLAttributes<any> {
  * Button
  */
 function Button(props: IButtonProps) {
-  const { children, cssProps } = props;
+  const { children, cssProps, ...rest } = props;
   return (
-    <button className={styles.root} style={{ ...cssProps }}>
+    <button className={styles.root} style={{ ...cssProps }} {...rest}>
       {children}
     </button>
   );
