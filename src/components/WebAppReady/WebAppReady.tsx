@@ -3,7 +3,6 @@
 import WebApp from "@twa-dev/sdk";
 
 import React, { useEffect } from "react";
-import eruda from "eruda";
 
 export interface IWebAppReadyProps {}
 
@@ -12,10 +11,12 @@ export interface IWebAppReadyProps {}
  */
 function WebAppReady(props: IWebAppReadyProps) {
   useEffect(() => {
-    if (typeof window !== undefined) {
-      WebApp.ready();
-      WebApp.expand();
-      eruda.init();
+    if (typeof window !== "undefined" && typeof self !== "undefined") {
+      import("eruda").then((eruda) => {
+        WebApp.ready();
+        WebApp.expand();
+        eruda.default.init();
+      });
     }
   }, []);
   return <div> </div>;
