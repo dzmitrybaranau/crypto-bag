@@ -13,6 +13,7 @@ function WebAppReady(props: IWebAppReadyProps) {
   useEffect(() => {
     if (typeof window !== undefined) {
       WebApp.ready();
+      WebApp.expand();
     }
   }, []);
   return <div> </div>;
