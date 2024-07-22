@@ -58,8 +58,8 @@ function AddTokenModal(props: IAddTokenModalProps) {
 
   useEffect(() => {
     if (autoCalculate && formState.usdt && formState.amount) {
-      const newPrice = (
-        parseFloat(formState.usdt) / parseFloat(formState.amount)
+      const newPrice = parseFloat(
+        (parseFloat(formState.usdt) / parseFloat(formState.amount)).toFixed(6),
       ).toString();
 
       if (newPrice !== formState.price) {
@@ -103,6 +103,7 @@ function AddTokenModal(props: IAddTokenModalProps) {
                   container: (base, props) => ({
                     ...base,
                     marginTop: 8,
+                    outline: "none",
                   }),
                   menu: (base, state) => ({
                     ...base,
