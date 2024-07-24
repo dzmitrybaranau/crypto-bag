@@ -9,7 +9,12 @@ interface Transaction {
   type: "buy" | "sell";
 }
 
-interface Token {
+export interface IToken {
+  cmcId: string;
+  price: string;
+  id: string;
+  symbol: string;
+  name: string;
   transactionsHistory: Transaction[];
 }
 
@@ -21,21 +26,19 @@ interface UserStore {
   setUserTmaInfo: (userTmaInfo: typeof WebApp.initDataUnsafe) => void;
   userAccount?: {
     tokens: {
-      [tokenId: string]: Token;
+      [tokenId: string]: IToken;
     };
   };
   buyToken: ({
-    tokenId,
-    date,
     usdt,
     amount,
     price,
+    token,
   }: {
-    tokenId: string;
     usdt: string;
     amount: string;
     price: string;
-    date: string;
+    token: Omit<IToken, "transactionsHistory">;
   }) => void;
 }
 
@@ -46,7 +49,7 @@ export const useUserStore = create<UserStore>((set) => ({
   isUserLoading: true,
   isTmaInfoLoading: true,
   userTmaInfo: undefined,
-  buyToken: ({ tokenId, date, usdt, amount, price }) => {
+  buyToken: ({ token, usdt, amount, price }) => {
     set((state) => {
       if (!state.userAccount) {
         return state;
@@ -56,15 +59,17 @@ export const useUserStore = create<UserStore>((set) => ({
         usdt,
         amount,
         price,
-        date,
+        date: new Date().toISOString(),
         type: "buy",
       };
 
       const updatedTokens = { ...state.userAccount.tokens };
-      if (updatedTokens[tokenId]) {
-        updatedTokens[tokenId].transactionsHistory.push(newTransaction);
+      if (updatedTokens[token.id]) {
+        updatedTokens[token.id].transactionsHistory.push(newTransaction);
       } else {
-        updatedTokens[tokenId] = {
+        updatedTokens[token.id] = {
+          ...token,
+          price,
           transactionsHistory: [newTransaction],
         };
       }

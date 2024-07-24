@@ -8,6 +8,7 @@ import inputStyles from "../Input/Input.module.scss";
 import Button from "@/components/TotalBalance/components/Button/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useUserStore } from "@/store";
+import parsedCryptoTokens from "./parsed_crypto_300.json";
 
 export interface IAddTokenModalProps {}
 
@@ -58,13 +59,21 @@ function AddTokenModal(props: IAddTokenModalProps) {
   };
 
   const handleAddToBagClick = () => {
-    console.log("BUY");
     buyToken({
-      tokenId: token?.value as string,
+      token: {
+        cmcId: parsedCryptoTokens.find(
+          (token) => token.id === formState.token?.value,
+        )?.cmcId as unknown as string,
+        price: formState.price as string,
+        symbol: formState.token?.value as string,
+        name: parsedCryptoTokens.find(
+          (token) => token.id === formState.token?.value,
+        )?.name as unknown as string,
+        id: formState.token?.value as string,
+      },
       amount: amount as string,
       usdt: usdt as string,
       price: price as string,
-      date: new Date().toISOString(),
     });
     setIsBuyOpen(false);
     setFormState({
@@ -90,13 +99,16 @@ function AddTokenModal(props: IAddTokenModalProps) {
     }
   }, [formState.usdt, formState.amount, formState.price, autoCalculate]);
 
-  const options = [
-    { value: "ETH", label: "ETH" },
-    { value: "BTC", label: "BTC" },
-    { value: "LTC", label: "LTC" },
-  ];
+  const options = parsedCryptoTokens.map((token) => ({
+    label: token.symbol,
+    value: token.id,
+  }));
 
-  console.log({ userAccount });
+  const estimatePrice =
+    parsedCryptoTokens
+      .find((token) => token.id === formState.token?.value)
+      ?.price?.toFixed(8)
+      ?.toString() ?? undefined;
 
   return (
     <>
@@ -203,6 +215,9 @@ function AddTokenModal(props: IAddTokenModalProps) {
                   type="number"
                   id="price"
                   value={formState.price}
+                  placeholder={
+                    estimatePrice ? `~${parseFloat(estimatePrice)}` : undefined
+                  }
                 />
               </div>
             </form>
