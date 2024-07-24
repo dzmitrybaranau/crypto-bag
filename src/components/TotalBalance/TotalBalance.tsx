@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./TotalBalance.module.scss";
 import Profit from "@/components/TotalBalance/components/Profit/Profit";
 import Spent from "@/components/TotalBalance/components/Spent/Spent";
+import logoSrc from "./logo.png";
+import Image from "next/image";
 
 export interface ITotalBalanceProps {}
 
@@ -14,7 +16,7 @@ function TotalBalance(props: ITotalBalanceProps) {
     <div className={styles.root}>
       <div className={styles.heading}>
         <h1 className={styles.text}>Total Balance</h1>{" "}
-        <div className={styles.logo}></div>
+        <Image className={styles.logo} src={logoSrc} alt="Logo" />
       </div>
       <h2 className={styles.balanceText}>$112,564</h2>
       <div className={styles.profitWrapper}>
