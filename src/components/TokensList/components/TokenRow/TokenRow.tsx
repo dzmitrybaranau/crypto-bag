@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./TokenRow.module.scss";
 import { ITokenTransaction } from "@/store/useUserStore";
 import { getTokenById } from "@/utils/getTokenById";
+import { getTokenAmountFromHistory } from "@/utils/getTokenAmountFromHistory";
 
 export interface ITokenRowProps {
   tokenId: string;
@@ -13,12 +14,7 @@ export interface ITokenRowProps {
  */
 function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
   const token = getTokenById(tokenId);
-  const amount = tokenTransactions.reduce((p, c) => {
-    if (c.type == "buy") {
-      return p + parseFloat(c.amount);
-    }
-    return p;
-  }, 0);
+  const amount = getTokenAmountFromHistory(tokenTransactions);
   const price = tokenTransactions[tokenTransactions.length - 1].price;
 
   return (
