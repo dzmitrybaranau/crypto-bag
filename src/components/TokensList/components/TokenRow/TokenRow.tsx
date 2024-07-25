@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TokenRow.module.scss";
 import { ITokenTransaction } from "@/store/useUserStore";
 import { getTokenById } from "@/utils/getTokenById";
-import { getTokenAmountFromHistory } from "@/utils/getTokenAmountFromHistory";
+import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
 
 export interface ITokenRowProps {
   tokenId: string;
@@ -14,8 +14,7 @@ export interface ITokenRowProps {
  */
 function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
   const token = getTokenById(tokenId);
-  const amount = getTokenAmountFromHistory(tokenTransactions);
-  const price = tokenTransactions[tokenTransactions.length - 1].price;
+  const { amount, lastPrice } = getTokenInfoFromHistory(tokenTransactions);
 
   return (
     <div className={styles.root}>
@@ -29,10 +28,10 @@ function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
           <div>
             <b>{token.symbol}</b>
           </div>
-          <div>${(parseFloat(price) * amount).toFixed(0)}</div>
+          <div>${(parseFloat(lastPrice) * amount).toFixed(0)}</div>
         </div>
         <div className={styles.infoRow}>
-          <div>${price}</div>
+          <div>${lastPrice}</div>
           <div>{amount}</div>
         </div>
       </div>

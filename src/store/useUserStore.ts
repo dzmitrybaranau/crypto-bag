@@ -30,6 +30,15 @@ interface UserStore {
   fetchUserAccount: (chatId: string) => Promise<void>;
   setUserTmaInfo: (userTmaInfo: typeof WebApp.initDataUnsafe) => void;
   userAccount?: IUserAccount;
+  sellToken: ({
+    amount,
+    price,
+    tokenId,
+  }: {
+    tokenId: string;
+    price: string;
+    amount: string;
+  }) => void;
   buyToken: ({
     amount,
     price,
@@ -49,6 +58,33 @@ export const useUserStore = create<UserStore>((set) => ({
   isUserLoading: true,
   isTmaInfoLoading: true,
   userTmaInfo: undefined,
+  sellToken: ({ tokenId, amount, price }) => {
+    set((state) => {
+      if (!state.userAccount) {
+        return state;
+      }
+      const newTransaction: ITokenTransaction = {
+        amount,
+        price,
+        date: new Date().toISOString(),
+        type: "sell",
+      };
+
+      return {
+        ...state,
+        userAccount: {
+          ...state.userAccount,
+          tokenTransactions: {
+            ...state.userAccount.tokenTransactions,
+            [tokenId]: [
+              ...(state.userAccount?.tokenTransactions?.[tokenId] ?? []),
+              newTransaction,
+            ],
+          },
+        },
+      };
+    });
+  },
   buyToken: ({ tokenId, amount, price }) => {
     set((state) => {
       if (!state.userAccount) {
@@ -60,18 +96,17 @@ export const useUserStore = create<UserStore>((set) => ({
         date: new Date().toISOString(),
         type: "buy",
       };
-      const updatedTokens = { ...state.userAccount.tokenTransactions };
-      if (updatedTokens[tokenId]) {
-        updatedTokens[tokenId].push(newTransaction);
-      } else {
-        updatedTokens[tokenId] = [newTransaction];
-      }
 
       return {
         ...state,
         userAccount: {
           ...state.userAccount,
-          tokenTransactions: updatedTokens,
+          tokenTransactions: {
+            [tokenId]: [
+              ...(state.userAccount?.tokenTransactions?.tokenId ?? []),
+              newTransaction,
+            ],
+          },
         },
       };
     });

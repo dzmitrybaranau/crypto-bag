@@ -1,11 +1,18 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, {
+  ChangeEvent,
+  MouseEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import Select, { SingleValue } from "react-select";
 import { getTokenById } from "@/utils/getTokenById";
-import styles from "@/components/AddTokenModal/AddTokenModal.module.scss";
+import styles from "./TokenForm.module.scss";
 import inputStyles from "@/components/Input/Input.module.scss";
 import Input from "@/components/Input/Input";
 import Button from "@/components/TotalBalance/components/Button/Button";
 import { getAllTokens } from "@/utils/getAllTokens";
+import { useUserStore } from "@/store";
+import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
 
 export interface ITokenFormProps {
   onSubmit: ({
@@ -17,6 +24,9 @@ export interface ITokenFormProps {
     price: string;
     tokenId: string;
   }) => void;
+  onClose: () => void;
+  formData?: IFormState;
+  type: "buy" | "sell";
 }
 
 interface ITokenOption {
@@ -34,13 +44,20 @@ interface IFormState {
 /**
  * Token Form
  */
-function TokenForm({ onSubmit }: ITokenFormProps) {
-  const [formState, setFormState] = useState<IFormState>({
+function TokenForm({
+  onSubmit,
+  onClose,
+  formData = {
     token: undefined,
     usdt: undefined,
     amount: undefined,
     price: undefined,
-  });
+  },
+  type,
+}: ITokenFormProps) {
+  const [formState, setFormState] = useState<IFormState>(formData);
+  const user = useUserStore((state) => state.userAccount);
+  const userTokenOptions = Object.keys(user?.tokenTransactions ?? {});
 
   useEffect(() => {
     if (formState.usdt && formState.amount) {
@@ -57,8 +74,26 @@ function TokenForm({ onSubmit }: ITokenFormProps) {
     }
   }, [formState.usdt, formState.amount, formState.price]);
 
-  const handleTokenChange = (option: SingleValue<ITokenOption>) => {
-    setFormState((prevState) => ({
+  const handleTokenSelect = (option: SingleValue<ITokenOption>) => {
+    if (type === "sell") {
+      if (
+        user?.tokenTransactions &&
+        user?.tokenTransactions?.[option?.value ?? ""] &&
+        option?.value
+      ) {
+        const { amount, lastPrice } = getTokenInfoFromHistory(
+          user.tokenTransactions[option.value],
+        );
+        setFormState((prevState) => ({
+          ...prevState,
+          amount: amount.toString(),
+          token: option as ITokenOption,
+          price: lastPrice,
+          usdt: (amount * parseFloat(lastPrice)).toFixed(0).toString(),
+        }));
+      }
+    }
+    return setFormState((prevState) => ({
       ...prevState,
       token: option as ITokenOption,
     }));
@@ -72,7 +107,7 @@ function TokenForm({ onSubmit }: ITokenFormProps) {
     }));
   };
 
-  const handleSubmit = (e: SubmitEvent) => {
+  const handleSubmit: MouseEventHandler = (e) => {
     e.preventDefault();
     if (formState.token?.value && formState.amount && formState.price) {
       onSubmit({
@@ -89,18 +124,23 @@ function TokenForm({ onSubmit }: ITokenFormProps) {
     }
   };
 
-  const estimatedPrice =
-    getTokenById(formState.token?.value || "")
-      ?.latestMarketPrice?.toFixed(8)
-      ?.toString() ?? undefined;
+  const estimatedPrice = formState.token?.value
+    ? (getTokenById(formState.token?.value)
+        ?.latestMarketPrice?.toFixed(8)
+        ?.toString() ?? undefined)
+    : undefined;
 
-  const options = getAllTokens().map((token) => ({
-    value: token.id,
-    label: token.symbol,
-  }));
+  const options =
+    type === "buy"
+      ? getAllTokens().map((token) => ({
+          value: token.id,
+          label: token.symbol,
+        }))
+      : userTokenOptions.map((tokeId) => ({ value: tokeId, label: tokeId }));
 
   return (
     <>
+      <button className={styles.closeButton} onClick={onClose} />
       <form>
         <div className={styles.inputWrapper}>
           <label className={inputStyles.label}>Token</label>
@@ -151,7 +191,7 @@ function TokenForm({ onSubmit }: ITokenFormProps) {
               }),
             }}
             value={formState.token}
-            onChange={handleTokenChange}
+            onChange={handleTokenSelect}
             options={options}
           />
         </div>
@@ -205,7 +245,7 @@ function TokenForm({ onSubmit }: ITokenFormProps) {
           onClick={handleSubmit}
           type="submit"
         >
-          Add To Bag
+          {type === "buy" ? "Add To Bag" : "Throw away from bag"}
         </Button>
       </form>
     </>
