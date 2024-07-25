@@ -8,7 +8,8 @@ import inputStyles from "../Input/Input.module.scss";
 import Button from "@/components/TotalBalance/components/Button/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useUserStore } from "@/store";
-import parsedCryptoTokens from "./parsed_crypto_300.json";
+import { getAllTokens } from "@/utils/getAllTokens";
+import { getTokenById } from "@/utils/getTokenById";
 
 export interface IAddTokenModalProps {}
 
@@ -30,10 +31,6 @@ interface IFormInterface {
 function AddTokenModal(props: IAddTokenModalProps) {
   const [isBuyOpen, setIsBuyOpen] = useState(false);
   const buyToken = useUserStore((state) => state.buyToken);
-  const userAccount = useUserStore((state) => state.userAccount);
-
-  const handleOpenBuy = () => setIsBuyOpen(true);
-  const handleCloseBuy = () => setIsBuyOpen(false);
 
   const [formState, setFormState] = useState<IFormInterface>({
     token: undefined,
@@ -41,9 +38,9 @@ function AddTokenModal(props: IAddTokenModalProps) {
     amount: undefined,
     price: undefined,
   });
-  const { token, usdt, amount, price } = formState;
 
-  const [autoCalculate, setAutoCalculate] = useState(true);
+  const handleOpenBuy = () => setIsBuyOpen(true);
+  const handleCloseBuy = () => setIsBuyOpen(false);
 
   const handleFormChange = (e: ChangeEvent<HTMLFormElement>) => {
     const { id, value } = e.target;
@@ -51,30 +48,16 @@ function AddTokenModal(props: IAddTokenModalProps) {
       ...prevState,
       [id]: value,
     }));
-    if (id === "usdt" || id === "amount") {
-      setAutoCalculate(true);
-    } else if (id === "price") {
-      setAutoCalculate(false);
-    }
   };
 
   const handleAddToBagClick = () => {
-    buyToken({
-      token: {
-        cmcId: parsedCryptoTokens.find(
-          (token) => token.id === formState.token?.value,
-        )?.cmcId as unknown as string,
-        price: formState.price as string,
-        symbol: formState.token?.value as string,
-        name: parsedCryptoTokens.find(
-          (token) => token.id === formState.token?.value,
-        )?.name as unknown as string,
-        id: formState.token?.value as string,
-      },
-      amount: amount as string,
-      usdt: usdt as string,
-      price: price as string,
-    });
+    if (formState?.token?.value && formState.amount && formState.price) {
+      buyToken({
+        tokenId: formState.token.value,
+        amount: formState.amount,
+        price: formState.price,
+      });
+    }
     setIsBuyOpen(false);
     setFormState({
       token: undefined,
@@ -85,7 +68,7 @@ function AddTokenModal(props: IAddTokenModalProps) {
   };
 
   useEffect(() => {
-    if (autoCalculate && formState.usdt && formState.amount) {
+    if (formState.usdt && formState.amount) {
       const newPrice = parseFloat(
         (parseFloat(formState.usdt) / parseFloat(formState.amount)).toFixed(6),
       ).toString();
@@ -97,17 +80,16 @@ function AddTokenModal(props: IAddTokenModalProps) {
         }));
       }
     }
-  }, [formState.usdt, formState.amount, formState.price, autoCalculate]);
+  }, [formState.usdt, formState.amount, formState.price]);
 
-  const options = parsedCryptoTokens.map((token) => ({
+  const options = getAllTokens().map((token) => ({
     label: token.symbol,
     value: token.id,
   }));
 
   const estimatePrice =
-    parsedCryptoTokens
-      .find((token) => token.id === formState.token?.value)
-      ?.price?.toFixed(8)
+    getTokenById(formState.token?.value || "")
+      ?.latestMarketPrice?.toFixed(8)
       ?.toString() ?? undefined;
 
   return (
@@ -232,7 +214,12 @@ function AddTokenModal(props: IAddTokenModalProps) {
                   "inset 0px -4px 2px #feb321, 0px 2px 2px rgba(169, 0,0,0.5)",
                 marginTop: 32,
               }}
-              disabled={!price || !amount || !token?.value || !usdt}
+              disabled={
+                !formState.price ||
+                !formState.amount ||
+                !formState.token?.value ||
+                !formState.usdt
+              }
               onClick={handleAddToBagClick}
             >
               Add To Bag

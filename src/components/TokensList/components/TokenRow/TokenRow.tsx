@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./TokenRow.module.scss";
-import { IToken } from "@/store/useUserStore";
+import { ITokenTransaction } from "@/store/useUserStore";
+import { getTokenById } from "@/utils/getTokenById";
 
 export interface ITokenRowProps {
-  token: IToken;
+  tokenId: string;
+  tokenTransactions: ITokenTransaction[];
 }
 
 /**
  * Token Row
  */
-function TokenRow({ token }: ITokenRowProps) {
-  const { symbol, price, transactionsHistory } = token;
-
-  console.log({ transactionsHistory });
-  const amount = transactionsHistory.reduce((p, c) => {
+function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
+  const token = getTokenById(tokenId);
+  const amount = tokenTransactions.reduce((p, c) => {
     if (c.type == "buy") {
       return p + parseFloat(c.amount);
     }
     return p;
   }, 0);
+  const price = tokenTransactions[tokenTransactions.length - 1].price;
 
   return (
     <div className={styles.root}>
@@ -30,7 +31,7 @@ function TokenRow({ token }: ITokenRowProps) {
       <div className={styles.infoWrapper}>
         <div className={styles.infoRow}>
           <div>
-            <b>{symbol}</b>
+            <b>{token.symbol}</b>
           </div>
           <div>${(parseFloat(price) * amount).toFixed(0)}</div>
         </div>

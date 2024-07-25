@@ -13,17 +13,23 @@ export interface ITokenListProps {}
  */
 function TokenList(props: ITokenListProps) {
   const userAccount = useUserStore((state) => state.userAccount);
-  const tokensToRender = Object.values(userAccount?.tokens ?? {});
 
+  const tokensToRender = Object.values(userAccount?.tokenTransactions ?? {});
+  const tokenKeys = Object.keys(userAccount?.tokenTransactions ?? {});
+
+  console.log({ tokenKeys });
   return (
     <div className={styles.root}>
       <div className={styles.heading}>
         <b>Token</b>
         <Search />
       </div>
-      {tokensToRender.map((token) => (
-        <div key={token.id} style={{ marginBottom: 12 }}>
-          <TokenRow token={token} />
+      {tokenKeys.map((tokenId) => (
+        <div key={tokenId} style={{ marginBottom: 12 }}>
+          <TokenRow
+            tokenId={tokenId}
+            tokenTransactions={userAccount?.tokenTransactions[tokenId] ?? []}
+          />
         </div>
       ))}
     </div>

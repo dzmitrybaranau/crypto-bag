@@ -1,8 +1,7 @@
 import { create } from "zustand";
 import WebApp from "@twa-dev/sdk";
 
-interface Transaction {
-  usdt: string;
+export interface ITokenTransaction {
   amount: string;
   price: string;
   date: string;
@@ -10,12 +9,18 @@ interface Transaction {
 }
 
 export interface IToken {
-  cmcId: string;
-  price: string;
   id: string;
+  cmcId: string;
   symbol: string;
   name: string;
-  transactionsHistory: Transaction[];
+  latestMarketPrice: number;
+}
+
+interface IUserAccount {
+  chatId?: string;
+  tokenTransactions: {
+    [tokenId: string]: ITokenTransaction[];
+  };
 }
 
 interface UserStore {
@@ -24,61 +29,49 @@ interface UserStore {
   userTmaInfo?: typeof WebApp.initDataUnsafe;
   fetchUserAccount: (chatId: string) => Promise<void>;
   setUserTmaInfo: (userTmaInfo: typeof WebApp.initDataUnsafe) => void;
-  userAccount?: {
-    tokens: {
-      [tokenId: string]: IToken;
-    };
-  };
+  userAccount?: IUserAccount;
   buyToken: ({
-    usdt,
     amount,
     price,
-    token,
+    tokenId,
   }: {
-    usdt: string;
-    amount: string;
+    tokenId: string;
     price: string;
-    token: Omit<IToken, "transactionsHistory">;
+    amount: string;
   }) => void;
 }
 
 export const useUserStore = create<UserStore>((set) => ({
   userAccount: {
-    tokens: {},
+    tokenTransactions: {},
+    chatId: undefined,
   },
   isUserLoading: true,
   isTmaInfoLoading: true,
   userTmaInfo: undefined,
-  buyToken: ({ token, usdt, amount, price }) => {
+  buyToken: ({ tokenId, amount, price }) => {
     set((state) => {
       if (!state.userAccount) {
         return state;
       }
-
-      const newTransaction: Transaction = {
-        usdt,
+      const newTransaction: ITokenTransaction = {
         amount,
         price,
         date: new Date().toISOString(),
         type: "buy",
       };
-
-      const updatedTokens = { ...state.userAccount.tokens };
-      if (updatedTokens[token.id]) {
-        updatedTokens[token.id].transactionsHistory.push(newTransaction);
+      const updatedTokens = { ...state.userAccount.tokenTransactions };
+      if (updatedTokens[tokenId]) {
+        updatedTokens[tokenId].push(newTransaction);
       } else {
-        updatedTokens[token.id] = {
-          ...token,
-          price,
-          transactionsHistory: [newTransaction],
-        };
+        updatedTokens[tokenId] = [newTransaction];
       }
 
       return {
         ...state,
         userAccount: {
           ...state.userAccount,
-          tokens: updatedTokens,
+          tokenTransactions: updatedTokens,
         },
       };
     });

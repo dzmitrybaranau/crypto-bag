@@ -3,2100 +3,2100 @@
     "id": "BTC",
     "symbol": "BTC",
     "name": "Bitcoin",
-    "price": 66255.211087895,
+    "lastestMarketPrice": 66255.211087895,
     "cmcId": 1
   },
   {
     "id": "ETH",
     "symbol": "ETH",
     "name": "Ethereum",
-    "price": 3453.931863853987,
+    "lastestMarketPrice": 3453.931863853987,
     "cmcId": 1027
   },
   {
     "id": "USDT",
     "symbol": "USDT",
     "name": "Tether USDt",
-    "price": 1.0001080742237558,
+    "lastestMarketPrice": 1.0001080742237558,
     "cmcId": 825
   },
   {
     "id": "BNB",
     "symbol": "BNB",
     "name": "BNB",
-    "price": 586.9797788324556,
+    "lastestMarketPrice": 586.9797788324556,
     "cmcId": 1839
   },
   {
     "id": "SOL",
     "symbol": "SOL",
     "name": "Solana",
-    "price": 176.36759469937314,
+    "lastestMarketPrice": 176.36759469937314,
     "cmcId": 5426
   },
   {
     "id": "USDC",
     "symbol": "USDC",
     "name": "USDC",
-    "price": 1.0000058305560304,
+    "lastestMarketPrice": 1.0000058305560304,
     "cmcId": 3408
   },
   {
     "id": "XRP",
     "symbol": "XRP",
     "name": "XRP",
-    "price": 0.6030986827033444,
+    "lastestMarketPrice": 0.6030986827033444,
     "cmcId": 52
   },
   {
     "id": "DOGE",
     "symbol": "DOGE",
     "name": "Dogecoin",
-    "price": 0.1327875022544799,
+    "lastestMarketPrice": 0.1327875022544799,
     "cmcId": 74
   },
   {
     "id": "TON",
     "symbol": "TON",
     "name": "Toncoin",
-    "price": 6.9697798276732605,
+    "lastestMarketPrice": 6.9697798276732605,
     "cmcId": 11419
   },
   {
     "id": "ADA",
     "symbol": "ADA",
     "name": "Cardano",
-    "price": 0.41799282081502015,
+    "lastestMarketPrice": 0.41799282081502015,
     "cmcId": 2010
   },
   {
     "id": "TRX",
     "symbol": "TRX",
     "name": "TRON",
-    "price": 0.1342359138168615,
+    "lastestMarketPrice": 0.1342359138168615,
     "cmcId": 1958
   },
   {
     "id": "AVAX",
     "symbol": "AVAX",
     "name": "Avalanche",
-    "price": 29.473677276329067,
+    "lastestMarketPrice": 29.473677276329067,
     "cmcId": 5805
   },
   {
     "id": "SHIB",
     "symbol": "SHIB",
     "name": "Shiba Inu",
-    "price": 0.00001722528682779524,
+    "lastestMarketPrice": 0.00001722528682779524,
     "cmcId": 5994
   },
   {
     "id": "DOT",
     "symbol": "DOT",
     "name": "Polkadot",
-    "price": 5.960149076478034,
+    "lastestMarketPrice": 5.960149076478034,
     "cmcId": 6636
   },
   {
     "id": "LINK",
     "symbol": "LINK",
     "name": "Chainlink",
-    "price": 13.785669614209667,
+    "lastestMarketPrice": 13.785669614209667,
     "cmcId": 1975
   },
   {
     "id": "BCH",
     "symbol": "BCH",
     "name": "Bitcoin Cash",
-    "price": 372.89851608670523,
+    "lastestMarketPrice": 372.89851608670523,
     "cmcId": 1831
   },
   {
     "id": "NEAR",
     "symbol": "NEAR",
     "name": "NEAR Protocol",
-    "price": 5.844531932320455,
+    "lastestMarketPrice": 5.844531932320455,
     "cmcId": 6535
   },
   {
     "id": "LTC",
     "symbol": "LTC",
     "name": "Litecoin",
-    "price": 73.18351600296685,
+    "lastestMarketPrice": 73.18351600296685,
     "cmcId": 2
   },
   {
     "id": "LEO",
     "symbol": "LEO",
     "name": "UNUS SED LEO",
-    "price": 5.825643051866423,
+    "lastestMarketPrice": 5.825643051866423,
     "cmcId": 3957
   },
   {
     "id": "DAI",
     "symbol": "DAI",
     "name": "Dai",
-    "price": 1.0001251628122982,
+    "lastestMarketPrice": 1.0001251628122982,
     "cmcId": 4943
   },
   {
     "id": "MATIC",
     "symbol": "MATIC",
     "name": "Polygon",
-    "price": 0.5383049767684165,
+    "lastestMarketPrice": 0.5383049767684165,
     "cmcId": 3890
   },
   {
     "id": "PEPE",
     "symbol": "PEPE",
     "name": "Pepe",
-    "price": 0.00001241622818804365,
+    "lastestMarketPrice": 0.00001241622818804365,
     "cmcId": 24478
   },
   {
     "id": "ICP",
     "symbol": "ICP",
     "name": "Internet Computer",
-    "price": 9.78714194866243,
+    "lastestMarketPrice": 9.78714194866243,
     "cmcId": 8916
   },
   {
     "id": "UNI",
     "symbol": "UNI",
     "name": "Uniswap",
-    "price": 7.625831358257671,
+    "lastestMarketPrice": 7.625831358257671,
     "cmcId": 7083
   },
   {
     "id": "KAS",
     "symbol": "KAS",
     "name": "Kaspa",
-    "price": 0.17794014827575594,
+    "lastestMarketPrice": 0.17794014827575594,
     "cmcId": 20396
   },
   {
     "id": "ETC",
     "symbol": "ETC",
     "name": "Ethereum Classic",
-    "price": 23.698671451080425,
+    "lastestMarketPrice": 23.698671451080425,
     "cmcId": 1321
   },
   {
     "id": "APT",
     "symbol": "APT",
     "name": "Aptos",
-    "price": 7.053270299305998,
+    "lastestMarketPrice": 7.053270299305998,
     "cmcId": 21794
   },
   {
     "id": "FET",
     "symbol": "FET",
     "name": "Artificial Superintelligence Alliance",
-    "price": 1.2722831894552467,
+    "lastestMarketPrice": 1.2722831894552467,
     "cmcId": 3773
   },
   {
     "id": "XLM",
     "symbol": "XLM",
     "name": "Stellar",
-    "price": 0.10284560328766346,
+    "lastestMarketPrice": 0.10284560328766346,
     "cmcId": 512
   },
   {
     "id": "XMR",
     "symbol": "XMR",
     "name": "Monero",
-    "price": 161.889016800294,
+    "lastestMarketPrice": 161.889016800294,
     "cmcId": 328
   },
   {
     "id": "MNT",
     "symbol": "MNT",
     "name": "Mantle",
-    "price": 0.8824181189757629,
+    "lastestMarketPrice": 0.8824181189757629,
     "cmcId": 27075
   },
   {
     "id": "RENDER",
     "symbol": "RENDER",
     "name": "Render",
-    "price": 6.806534320483087,
+    "lastestMarketPrice": 6.806534320483087,
     "cmcId": 5690
   },
   {
     "id": "STX",
     "symbol": "STX",
     "name": "Stacks",
-    "price": 1.8065600959181936,
+    "lastestMarketPrice": 1.8065600959181936,
     "cmcId": 4847
   },
   {
     "id": "WIF",
     "symbol": "WIF",
     "name": "dogwifhat",
-    "price": 2.629481352372318,
+    "lastestMarketPrice": 2.629481352372318,
     "cmcId": 28752
   },
   {
     "id": "ARB",
     "symbol": "ARB",
     "name": "Arbitrum",
-    "price": 0.7808346563322344,
+    "lastestMarketPrice": 0.7808346563322344,
     "cmcId": 11841
   },
   {
     "id": "MKR",
     "symbol": "MKR",
     "name": "Maker",
-    "price": 2773.2773683968007,
+    "lastestMarketPrice": 2773.2773683968007,
     "cmcId": 1518
   },
   {
     "id": "FIL",
     "symbol": "FIL",
     "name": "Filecoin",
-    "price": 4.501193573455039,
+    "lastestMarketPrice": 4.501193573455039,
     "cmcId": 2280
   },
   {
     "id": "HBAR",
     "symbol": "HBAR",
     "name": "Hedera",
-    "price": 0.06912374525503738,
+    "lastestMarketPrice": 0.06912374525503738,
     "cmcId": 4642
   },
   {
     "id": "CRO",
     "symbol": "CRO",
     "name": "Cronos",
-    "price": 0.09297061458057247,
+    "lastestMarketPrice": 0.09297061458057247,
     "cmcId": 3635
   },
   {
     "id": "ATOM",
     "symbol": "ATOM",
     "name": "Cosmos",
-    "price": 6.27432270765376,
+    "lastestMarketPrice": 6.27432270765376,
     "cmcId": 3794
   },
   {
     "id": "IMX",
     "symbol": "IMX",
     "name": "Immutable",
-    "price": 1.5607627375781963,
+    "lastestMarketPrice": 1.5607627375781963,
     "cmcId": 10603
   },
   {
     "id": "TAO",
     "symbol": "TAO",
     "name": "Bittensor",
-    "price": 337.81936367897725,
+    "lastestMarketPrice": 337.81936367897725,
     "cmcId": 22974
   },
   {
     "id": "OKB",
     "symbol": "OKB",
     "name": "OKB",
-    "price": 39.95578974148086,
+    "lastestMarketPrice": 39.95578974148086,
     "cmcId": 3897
   },
   {
     "id": "VET",
     "symbol": "VET",
     "name": "VeChain",
-    "price": 0.029246828564101206,
+    "lastestMarketPrice": 0.029246828564101206,
     "cmcId": 3077
   },
   {
     "id": "INJ",
     "symbol": "INJ",
     "name": "Injective",
-    "price": 25.214066746494108,
+    "lastestMarketPrice": 25.214066746494108,
     "cmcId": 7226
   },
   {
     "id": "OP",
     "symbol": "OP",
     "name": "Optimism",
-    "price": 1.8735319164537283,
+    "lastestMarketPrice": 1.8735319164537283,
     "cmcId": 11840
   },
   {
     "id": "AR",
     "symbol": "AR",
     "name": "Arweave",
-    "price": 31.424128700736507,
+    "lastestMarketPrice": 31.424128700736507,
     "cmcId": 5632
   },
   {
     "id": "SUI",
     "symbol": "SUI",
     "name": "Sui",
-    "price": 0.8048958942461695,
+    "lastestMarketPrice": 0.8048958942461695,
     "cmcId": 20947
   },
   {
     "id": "FDUSD",
     "symbol": "FDUSD",
     "name": "First Digital USD",
-    "price": 1.0001562507021378,
+    "lastestMarketPrice": 1.0001562507021378,
     "cmcId": 26081
   },
   {
     "id": "BONK",
     "symbol": "BONK",
     "name": "Bonk",
-    "price": 0.000028674692856396768,
+    "lastestMarketPrice": 0.000028674692856396768,
     "cmcId": 23095
   },
   {
     "id": "GRT",
     "symbol": "GRT",
     "name": "The Graph",
-    "price": 0.20056725208872092,
+    "lastestMarketPrice": 0.20056725208872092,
     "cmcId": 6719
   },
   {
     "id": "FLOKI",
     "symbol": "FLOKI",
     "name": "FLOKI",
-    "price": 0.00018717140324727894,
+    "lastestMarketPrice": 0.00018717140324727894,
     "cmcId": 10804
   },
   {
     "id": "RUNE",
     "symbol": "RUNE",
     "name": "THORChain",
-    "price": 4.79608029807924,
+    "lastestMarketPrice": 4.79608029807924,
     "cmcId": 4157
   },
   {
     "id": "BGB",
     "symbol": "BGB",
     "name": "Bitget Token",
-    "price": 1.142431826881884,
+    "lastestMarketPrice": 1.142431826881884,
     "cmcId": 11092
   },
   {
     "id": "LDO",
     "symbol": "LDO",
     "name": "Lido DAO",
-    "price": 1.7615309185964638,
+    "lastestMarketPrice": 1.7615309185964638,
     "cmcId": 8000
   },
   {
     "id": "THETA",
     "symbol": "THETA",
     "name": "Theta Network",
-    "price": 1.4870787983815035,
+    "lastestMarketPrice": 1.4870787983815035,
     "cmcId": 2416
   },
   {
     "id": "NOT",
     "symbol": "NOT",
     "name": "Notcoin",
-    "price": 0.01423640709483651,
+    "lastestMarketPrice": 0.01423640709483651,
     "cmcId": 28850
   },
   {
     "id": "AAVE",
     "symbol": "AAVE",
     "name": "Aave",
-    "price": 93.81073790712122,
+    "lastestMarketPrice": 93.81073790712122,
     "cmcId": 7278
   },
   {
     "id": "JASMY",
     "symbol": "JASMY",
     "name": "JasmyCoin",
-    "price": 0.02822414318858414,
+    "lastestMarketPrice": 0.02822414318858414,
     "cmcId": 8425
   },
   {
     "id": "FTM",
     "symbol": "FTM",
     "name": "Fantom",
-    "price": 0.4934886587967094,
+    "lastestMarketPrice": 0.4934886587967094,
     "cmcId": 3513
   },
   {
     "id": "ONDO",
     "symbol": "ONDO",
     "name": "Ondo",
-    "price": 0.9916036658032615,
+    "lastestMarketPrice": 0.9916036658032615,
     "cmcId": 21159
   },
   {
     "id": "JUP",
     "symbol": "JUP",
     "name": "Jupiter",
-    "price": 0.9911215108327274,
+    "lastestMarketPrice": 0.9911215108327274,
     "cmcId": 29210
   },
   {
     "id": "BRETT",
     "symbol": "BRETT",
     "name": "Brett (Based)",
-    "price": 0.13153378282158082,
+    "lastestMarketPrice": 0.13153378282158082,
     "cmcId": 29743
   },
   {
     "id": "CORE",
     "symbol": "CORE",
     "name": "Core",
-    "price": 1.4253853974008077,
+    "lastestMarketPrice": 1.4253853974008077,
     "cmcId": 23254
   },
   {
     "id": "TIA",
     "symbol": "TIA",
     "name": "Celestia",
-    "price": 6.450623846349688,
+    "lastestMarketPrice": 6.450623846349688,
     "cmcId": 22861
   },
   {
     "id": "PYTH",
     "symbol": "PYTH",
     "name": "Pyth Network",
-    "price": 0.34624251340457524,
+    "lastestMarketPrice": 0.34624251340457524,
     "cmcId": 28177
   },
   {
     "id": "ALGO",
     "symbol": "ALGO",
     "name": "Algorand",
-    "price": 0.1446489049698705,
+    "lastestMarketPrice": 0.1446489049698705,
     "cmcId": 4030
   },
   {
     "id": "SEI",
     "symbol": "SEI",
     "name": "Sei",
-    "price": 0.37176742600044244,
+    "lastestMarketPrice": 0.37176742600044244,
     "cmcId": 23149
   },
   {
     "id": "OM",
     "symbol": "OM",
     "name": "MANTRA",
-    "price": 1.2655158077113033,
+    "lastestMarketPrice": 1.2655158077113033,
     "cmcId": 6536
   },
   {
     "id": "FLOW",
     "symbol": "FLOW",
     "name": "Flow",
-    "price": 0.6522489296173005,
+    "lastestMarketPrice": 0.6522489296173005,
     "cmcId": 4558
   },
   {
     "id": "EGLD",
     "symbol": "EGLD",
     "name": "MultiversX",
-    "price": 34.515559053919965,
+    "lastestMarketPrice": 34.515559053919965,
     "cmcId": 6892
   },
   {
     "id": "KCS",
     "symbol": "KCS",
     "name": "KuCoin Token",
-    "price": 9.834593510839968,
+    "lastestMarketPrice": 9.834593510839968,
     "cmcId": 2087
   },
   {
     "id": "ENS",
     "symbol": "ENS",
     "name": "Ethereum Name Service",
-    "price": 28.40340786450879,
+    "lastestMarketPrice": 28.40340786450879,
     "cmcId": 13855
   },
   {
     "id": "AXS",
     "symbol": "AXS",
     "name": "Axie Infinity",
-    "price": 6.1486869175690275,
+    "lastestMarketPrice": 6.1486869175690275,
     "cmcId": 6783
   },
   {
     "id": "BEAM",
     "symbol": "BEAM",
     "name": "Beam",
-    "price": 0.01798561290597381,
+    "lastestMarketPrice": 0.01798561290597381,
     "cmcId": 28298
   },
   {
     "id": "EOS",
     "symbol": "EOS",
     "name": "EOS",
-    "price": 0.5897442289628394,
+    "lastestMarketPrice": 0.5897442289628394,
     "cmcId": 1765
   },
   {
     "id": "BSV",
     "symbol": "BSV",
     "name": "Bitcoin SV",
-    "price": 44.98562119776786,
+    "lastestMarketPrice": 44.98562119776786,
     "cmcId": 3602
   },
   {
     "id": "QNT",
     "symbol": "QNT",
     "name": "Quant",
-    "price": 72.99412674345453,
+    "lastestMarketPrice": 72.99412674345453,
     "cmcId": 3155
   },
   {
     "id": "HNT",
     "symbol": "HNT",
     "name": "Helium",
-    "price": 5.299891974500187,
+    "lastestMarketPrice": 5.299891974500187,
     "cmcId": 5665
   },
   {
     "id": "ENA",
     "symbol": "ENA",
     "name": "Ethena",
-    "price": 0.4933172607306398,
+    "lastestMarketPrice": 0.4933172607306398,
     "cmcId": 30171
   },
   {
     "id": "STRK",
     "symbol": "STRK",
     "name": "Starknet",
-    "price": 0.5779235322323676,
+    "lastestMarketPrice": 0.5779235322323676,
     "cmcId": 22691
   },
   {
     "id": "POPCAT",
     "symbol": "POPCAT",
     "name": "Popcat (SOL)",
-    "price": 0.8600432402909911,
+    "lastestMarketPrice": 0.8600432402909911,
     "cmcId": 28782
   },
   {
     "id": "BTT",
     "symbol": "BTT",
     "name": "BitTorrent [New]",
-    "price": 8.692065889838263e-7,
+    "lastestMarketPrice": 8.692065889838263e-7,
     "cmcId": 16086
   },
   {
     "id": "FLR",
     "symbol": "FLR",
     "name": "Flare",
-    "price": 0.019634411138961284,
+    "lastestMarketPrice": 0.019634411138961284,
     "cmcId": 7950
   },
   {
     "id": "AKT",
     "symbol": "AKT",
     "name": "Akash Network",
-    "price": 3.365534714372114,
+    "lastestMarketPrice": 3.365534714372114,
     "cmcId": 7431
   },
   {
     "id": "NEO",
     "symbol": "NEO",
     "name": "Neo",
-    "price": 11.619944875932621,
+    "lastestMarketPrice": 11.619944875932621,
     "cmcId": 1376
   },
   {
     "id": "DYDX",
     "symbol": "DYDX",
     "name": "dYdX (Native)",
-    "price": 1.3331164907099682,
+    "lastestMarketPrice": 1.3331164907099682,
     "cmcId": 28324
   },
   {
     "id": "GALA",
     "symbol": "GALA",
     "name": "Gala",
-    "price": 0.02427905406796335,
+    "lastestMarketPrice": 0.02427905406796335,
     "cmcId": 7080
   },
   {
     "id": "ORDI",
     "symbol": "ORDI",
     "name": "ORDI",
-    "price": 37.621392372271785,
+    "lastestMarketPrice": 37.621392372271785,
     "cmcId": 25028
   },
   {
     "id": "XTZ",
     "symbol": "XTZ",
     "name": "Tezos",
-    "price": 0.7681871075020215,
+    "lastestMarketPrice": 0.7681871075020215,
     "cmcId": 2011
   },
   {
     "id": "MEW",
     "symbol": "MEW",
     "name": "cat in a dogs world",
-    "price": 0.008469000515531275,
+    "lastestMarketPrice": 0.008469000515531275,
     "cmcId": 30126
   },
   {
     "id": "RON",
     "symbol": "RON",
     "name": "Ronin",
-    "price": 2.230582584354273,
+    "lastestMarketPrice": 2.230582584354273,
     "cmcId": 14101
   },
   {
     "id": "SAND",
     "symbol": "SAND",
     "name": "The Sandbox",
-    "price": 0.32654430885305186,
+    "lastestMarketPrice": 0.32654430885305186,
     "cmcId": 6210
   },
   {
     "id": "USDD",
     "symbol": "USDD",
     "name": "USDD",
-    "price": 0.9995836893625127,
+    "lastestMarketPrice": 0.9995836893625127,
     "cmcId": 19891
   },
   {
     "id": "MOG",
     "symbol": "MOG",
     "name": "Mog Coin",
-    "price": 0.0000019695288703869105,
+    "lastestMarketPrice": 0.0000019695288703869105,
     "cmcId": 27659
   },
   {
     "id": "GT",
     "symbol": "GT",
     "name": "GateToken",
-    "price": 7.589865381964084,
+    "lastestMarketPrice": 7.589865381964084,
     "cmcId": 4269
   },
   {
     "id": "NEXO",
     "symbol": "NEXO",
     "name": "Nexo",
-    "price": 1.236303494550843,
+    "lastestMarketPrice": 1.236303494550843,
     "cmcId": 2694
   },
   {
     "id": "XEC",
     "symbol": "XEC",
     "name": "eCash",
-    "price": 0.000034600119770940054,
+    "lastestMarketPrice": 0.000034600119770940054,
     "cmcId": 10791
   },
   {
     "id": "CFX",
     "symbol": "CFX",
     "name": "Conflux",
-    "price": 0.15970162563169563,
+    "lastestMarketPrice": 0.15970162563169563,
     "cmcId": 7334
   },
   {
     "id": "ZK",
     "symbol": "ZK",
     "name": "zkSync",
-    "price": 0.1783268128492199,
+    "lastestMarketPrice": 0.1783268128492199,
     "cmcId": 24091
   },
   {
     "id": "PENDLE",
     "symbol": "PENDLE",
     "name": "Pendle",
-    "price": 4.126662890164509,
+    "lastestMarketPrice": 4.126662890164509,
     "cmcId": 9481
   },
   {
     "id": "MANA",
     "symbol": "MANA",
     "name": "Decentraland",
-    "price": 0.33774577865178235,
+    "lastestMarketPrice": 0.33774577865178235,
     "cmcId": 1966
   },
   {
     "id": "WLD",
     "symbol": "WLD",
     "name": "Worldcoin",
-    "price": 2.219365899223039,
+    "lastestMarketPrice": 2.219365899223039,
     "cmcId": 13502
   },
   {
     "id": "CHZ",
     "symbol": "CHZ",
     "name": "Chiliz",
-    "price": 0.07024183967318925,
+    "lastestMarketPrice": 0.07024183967318925,
     "cmcId": 4066
   },
   {
     "id": "RAY",
     "symbol": "RAY",
     "name": "Raydium",
-    "price": 2.366803718854667,
+    "lastestMarketPrice": 2.366803718854667,
     "cmcId": 8526
   },
   {
     "id": "GNO",
     "symbol": "GNO",
     "name": "Gnosis",
-    "price": 239.06952818551355,
+    "lastestMarketPrice": 239.06952818551355,
     "cmcId": 1659
   },
   {
     "id": "ROSE",
     "symbol": "ROSE",
     "name": "Oasis",
-    "price": 0.08990373936551961,
+    "lastestMarketPrice": 0.08990373936551961,
     "cmcId": 7653
   },
   {
     "id": "BOME",
     "symbol": "BOME",
     "name": "BOOK OF MEME",
-    "price": 0.008717414970408396,
+    "lastestMarketPrice": 0.008717414970408396,
     "cmcId": 29870
   },
   {
     "id": "MINA",
     "symbol": "MINA",
     "name": "Mina",
-    "price": 0.5282723376850599,
+    "lastestMarketPrice": 0.5282723376850599,
     "cmcId": 8646
   },
   {
     "id": "XAUt",
     "symbol": "XAUt",
     "name": "Tether Gold",
-    "price": 2414.2520515304013,
+    "lastestMarketPrice": 2414.2520515304013,
     "cmcId": 5176
   },
   {
     "id": "BNX",
     "symbol": "BNX",
     "name": "BinaryX",
-    "price": 1.5882822532156782,
+    "lastestMarketPrice": 1.5882822532156782,
     "cmcId": 23635
   },
   {
     "id": "AIOZ",
     "symbol": "AIOZ",
     "name": "AIOZ Network",
-    "price": 0.5302953903722932,
+    "lastestMarketPrice": 0.5302953903722932,
     "cmcId": 9104
   },
   {
     "id": "SNX",
     "symbol": "SNX",
     "name": "Synthetix",
-    "price": 1.7760002312138736,
+    "lastestMarketPrice": 1.7760002312138736,
     "cmcId": 2586
   },
   {
     "id": "IOTA",
     "symbol": "IOTA",
     "name": "IOTA",
-    "price": 0.1709637260772242,
+    "lastestMarketPrice": 0.1709637260772242,
     "cmcId": 1720
   },
   {
     "id": "W",
     "symbol": "W",
     "name": "Wormhole",
-    "price": 0.318926938445246,
+    "lastestMarketPrice": 0.318926938445246,
     "cmcId": 29587
   },
   {
     "id": "1000SATS",
     "symbol": "1000SATS",
     "name": "SATS",
-    "price": 0.0002711441893914583,
+    "lastestMarketPrice": 0.0002711441893914583,
     "cmcId": 28683
   },
   {
     "id": "DEXE",
     "symbol": "DEXE",
     "name": "DeXe",
-    "price": 9.73733200556912,
+    "lastestMarketPrice": 9.73733200556912,
     "cmcId": 7326
   },
   {
     "id": "KLAY",
     "symbol": "KLAY",
     "name": "Klaytn",
-    "price": 0.14399524837720917,
+    "lastestMarketPrice": 0.14399524837720917,
     "cmcId": 4256
   },
   {
     "id": "CKB",
     "symbol": "CKB",
     "name": "Nervos Network",
-    "price": 0.011914736951197389,
+    "lastestMarketPrice": 0.011914736951197389,
     "cmcId": 4948
   },
   {
     "id": "ZRO",
     "symbol": "ZRO",
     "name": "LayerZero",
-    "price": 4.823482846813285,
+    "lastestMarketPrice": 4.823482846813285,
     "cmcId": 26997
   },
   {
     "id": "SAFE",
     "symbol": "SAFE",
     "name": "Safe",
-    "price": 1.2372376999156758,
+    "lastestMarketPrice": 1.2372376999156758,
     "cmcId": 21585
   },
   {
     "id": "LPT",
     "symbol": "LPT",
     "name": "Livepeer",
-    "price": 15.703001978816822,
+    "lastestMarketPrice": 15.703001978816822,
     "cmcId": 3640
   },
   {
     "id": "ASTR",
     "symbol": "ASTR",
     "name": "Astar",
-    "price": 0.07421440922058756,
+    "lastestMarketPrice": 0.07421440922058756,
     "cmcId": 12885
   },
   {
     "id": "1INCH",
     "symbol": "1INCH",
     "name": "1inch Network",
-    "price": 0.39692052885523676,
+    "lastestMarketPrice": 0.39692052885523676,
     "cmcId": 8104
   },
   {
     "id": "APE",
     "symbol": "APE",
     "name": "ApeCoin",
-    "price": 0.8224104192922391,
+    "lastestMarketPrice": 0.8224104192922391,
     "cmcId": 18876
   },
   {
     "id": "TUSD",
     "symbol": "TUSD",
     "name": "TrueUSD",
-    "price": 1.0020907150782896,
+    "lastestMarketPrice": 1.0020907150782896,
     "cmcId": 2563
   },
   {
     "id": "AXL",
     "symbol": "AXL",
     "name": "Axelar",
-    "price": 0.6784348295188766,
+    "lastestMarketPrice": 0.6784348295188766,
     "cmcId": 17799
   },
   {
     "id": "ZEC",
     "symbol": "ZEC",
     "name": "Zcash",
-    "price": 29.764478123434625,
+    "lastestMarketPrice": 29.764478123434625,
     "cmcId": 1437
   },
   {
     "id": "LUNC",
     "symbol": "LUNC",
     "name": "Terra Classic",
-    "price": 0.00008677971074528813,
+    "lastestMarketPrice": 0.00008677971074528813,
     "cmcId": 4172
   },
   {
     "id": "FTT",
     "symbol": "FTT",
     "name": "FTX Token",
-    "price": 1.4167972465567784,
+    "lastestMarketPrice": 1.4167972465567784,
     "cmcId": 4195
   },
   {
     "id": "AEVO",
     "symbol": "AEVO",
     "name": "Aevo",
-    "price": 0.5404550267088011,
+    "lastestMarketPrice": 0.5404550267088011,
     "cmcId": 29676
   },
   {
     "id": "TFUEL",
     "symbol": "TFUEL",
     "name": "Theta Fuel",
-    "price": 0.07013613506116896,
+    "lastestMarketPrice": 0.07013613506116896,
     "cmcId": 3822
   },
   {
     "id": "CAKE",
     "symbol": "CAKE",
     "name": "PancakeSwap",
-    "price": 1.9998224728946687,
+    "lastestMarketPrice": 1.9998224728946687,
     "cmcId": 7186
   },
   {
     "id": "BTG",
     "symbol": "BTG",
     "name": "Bitcoin Gold",
-    "price": 25.700300679263954,
+    "lastestMarketPrice": 25.700300679263954,
     "cmcId": 2083
   },
   {
     "id": "PAXG",
     "symbol": "PAXG",
     "name": "PAX Gold",
-    "price": 2406.7200622981964,
+    "lastestMarketPrice": 2406.7200622981964,
     "cmcId": 4705
   },
   {
     "id": "XDC",
     "symbol": "XDC",
     "name": "XDC Network",
-    "price": 0.030073812738366058,
+    "lastestMarketPrice": 0.030073812738366058,
     "cmcId": 2634
   },
   {
     "id": "KAVA",
     "symbol": "KAVA",
     "name": "Kava",
-    "price": 0.4114932725103698,
+    "lastestMarketPrice": 0.4114932725103698,
     "cmcId": 4846
   },
   {
     "id": "IOTX",
     "symbol": "IOTX",
     "name": "IoTeX",
-    "price": 0.04646238984147797,
+    "lastestMarketPrice": 0.04646238984147797,
     "cmcId": 2777
   },
   {
     "id": "NFT",
     "symbol": "NFT",
     "name": "APENFT",
-    "price": 4.296667580201355e-7,
+    "lastestMarketPrice": 4.296667580201355e-7,
     "cmcId": 9816
   },
   {
     "id": "WEMIX",
     "symbol": "WEMIX",
     "name": "WEMIX",
-    "price": 1.0463350589666265,
+    "lastestMarketPrice": 1.0463350589666265,
     "cmcId": 7548
   },
   {
     "id": "COMP",
     "symbol": "COMP",
     "name": "Compound",
-    "price": 50.7982951200217,
+    "lastestMarketPrice": 50.7982951200217,
     "cmcId": 5692
   },
   {
     "id": "TWT",
     "symbol": "TWT",
     "name": "Trust Wallet Token",
-    "price": 1.007805919347569,
+    "lastestMarketPrice": 1.007805919347569,
     "cmcId": 5964
   },
   {
     "id": "PEOPLE",
     "symbol": "PEOPLE",
     "name": "ConstitutionDAO",
-    "price": 0.07900445343420454,
+    "lastestMarketPrice": 0.07900445343420454,
     "cmcId": 14806
   },
   {
     "id": "ANT",
     "symbol": "ANT",
     "name": "Aragon",
-    "price": 9.15379577309971,
+    "lastestMarketPrice": 9.15379577309971,
     "cmcId": 1680
   },
   {
     "id": "MX",
     "symbol": "MX",
     "name": "MX Token",
-    "price": 3.979497009308053,
+    "lastestMarketPrice": 3.979497009308053,
     "cmcId": 4041
   },
   {
     "id": "WOO",
     "symbol": "WOO",
     "name": "WOO",
-    "price": 0.20040329747180646,
+    "lastestMarketPrice": 0.20040329747180646,
     "cmcId": 7501
   },
   {
     "id": "SFP",
     "symbol": "SFP",
     "name": "SafePal",
-    "price": 0.8287865018826981,
+    "lastestMarketPrice": 0.8287865018826981,
     "cmcId": 8119
   },
   {
     "id": "MANTA",
     "symbol": "MANTA",
     "name": "Manta Network",
-    "price": 0.9811063121755231,
+    "lastestMarketPrice": 0.9811063121755231,
     "cmcId": 13631
   },
   {
     "id": "GAL",
     "symbol": "GAL",
     "name": "Galxe",
-    "price": 3.086981590715752,
+    "lastestMarketPrice": 3.086981590715752,
     "cmcId": 11877
   },
   {
     "id": "MEME",
     "symbol": "MEME",
     "name": "Memecoin",
-    "price": 0.016127003327631114,
+    "lastestMarketPrice": 0.016127003327631114,
     "cmcId": 28301
   },
   {
     "id": "BLUR",
     "symbol": "BLUR",
     "name": "Blur",
-    "price": 0.20103295469815746,
+    "lastestMarketPrice": 0.20103295469815746,
     "cmcId": 23121
   },
   {
     "id": "PYUSD",
     "symbol": "PYUSD",
     "name": "PayPal USD",
-    "price": 0.9994654324471982,
+    "lastestMarketPrice": 0.9994654324471982,
     "cmcId": 27772
   },
   {
     "id": "RPL",
     "symbol": "RPL",
     "name": "Rocket Pool",
-    "price": 16.851766782810277,
+    "lastestMarketPrice": 16.851766782810277,
     "cmcId": 2943
   },
   {
     "id": "SUPER",
     "symbol": "SUPER",
     "name": "SuperVerse",
-    "price": 0.708911986335674,
+    "lastestMarketPrice": 0.708911986335674,
     "cmcId": 8290
   },
   {
     "id": "GLM",
     "symbol": "GLM",
     "name": "Golem",
-    "price": 0.3442859088263713,
+    "lastestMarketPrice": 0.3442859088263713,
     "cmcId": 1455
   },
   {
     "id": "GMT",
     "symbol": "GMT",
     "name": "GMT",
-    "price": 0.14983004593694188,
+    "lastestMarketPrice": 0.14983004593694188,
     "cmcId": 18069
   },
   {
     "id": "OSMO",
     "symbol": "OSMO",
     "name": "Osmosis",
-    "price": 0.5063463008622264,
+    "lastestMarketPrice": 0.5063463008622264,
     "cmcId": 12220
   },
   {
     "id": "LUNA",
     "symbol": "LUNA",
     "name": "Terra",
-    "price": 0.423921878505512,
+    "lastestMarketPrice": 0.423921878505512,
     "cmcId": 20314
   },
   {
     "id": "PONKE",
     "symbol": "PONKE",
     "name": "Ponke",
-    "price": 0.6007285364941782,
+    "lastestMarketPrice": 0.6007285364941782,
     "cmcId": 29150
   },
   {
     "id": "SSV",
     "symbol": "SSV",
     "name": "ssv.network",
-    "price": 33.014791121479014,
+    "lastestMarketPrice": 33.014791121479014,
     "cmcId": 12999
   },
   {
     "id": "KSM",
     "symbol": "KSM",
     "name": "Kusama",
-    "price": 21.350473532102296,
+    "lastestMarketPrice": 21.350473532102296,
     "cmcId": 5034
   },
   {
     "id": "CRV",
     "symbol": "CRV",
     "name": "Curve DAO Token",
-    "price": 0.2727757658280238,
+    "lastestMarketPrice": 0.2727757658280238,
     "cmcId": 6538
   },
   {
     "id": "DYM",
     "symbol": "DYM",
     "name": "Dymension",
-    "price": 1.685155065569368,
+    "lastestMarketPrice": 1.685155065569368,
     "cmcId": 28932
   },
   {
     "id": "DASH",
     "symbol": "DASH",
     "name": "Dash",
-    "price": 27.224577750806176,
+    "lastestMarketPrice": 27.224577750806176,
     "cmcId": 131
   },
   {
     "id": "ZIL",
     "symbol": "ZIL",
     "name": "Zilliqa",
-    "price": 0.01707126978939735,
+    "lastestMarketPrice": 0.01707126978939735,
     "cmcId": 2469
   },
   {
     "id": "ILV",
     "symbol": "ILV",
     "name": "Illuvium",
-    "price": 71.16450810468949,
+    "lastestMarketPrice": 71.16450810468949,
     "cmcId": 8719
   },
   {
     "id": "JTO",
     "symbol": "JTO",
     "name": "Jito",
-    "price": 2.574658149908668,
+    "lastestMarketPrice": 2.574658149908668,
     "cmcId": 28541
   },
   {
     "id": "ZRX",
     "symbol": "ZRX",
     "name": "0x Protocol",
-    "price": 0.37437512817167645,
+    "lastestMarketPrice": 0.37437512817167645,
     "cmcId": 1896
   },
   {
     "id": "CELO",
     "symbol": "CELO",
     "name": "Celo",
-    "price": 0.5775192390635949,
+    "lastestMarketPrice": 0.5775192390635949,
     "cmcId": 5567
   },
   {
     "id": "ENJ",
     "symbol": "ENJ",
     "name": "Enjin Coin",
-    "price": 0.1877088681410342,
+    "lastestMarketPrice": 0.1877088681410342,
     "cmcId": 2130
   },
   {
     "id": "ANKR",
     "symbol": "ANKR",
     "name": "Ankr",
-    "price": 0.03101261480692227,
+    "lastestMarketPrice": 0.03101261480692227,
     "cmcId": 3783
   },
   {
     "id": "BLAST",
     "symbol": "BLAST",
     "name": "Blast",
-    "price": 0.01701776834060622,
+    "lastestMarketPrice": 0.01701776834060622,
     "cmcId": 28480
   },
   {
     "id": "ID",
     "symbol": "ID",
     "name": "SPACE ID",
-    "price": 0.46329100370307874,
+    "lastestMarketPrice": 0.46329100370307874,
     "cmcId": 21846
   },
   {
     "id": "ETHDYDX",
     "symbol": "ETHDYDX",
     "name": "dYdX (ethDYDX)",
-    "price": 1.3325702506190842,
+    "lastestMarketPrice": 1.3325702506190842,
     "cmcId": 11156
   },
   {
     "id": "HOT",
     "symbol": "HOT",
     "name": "Holo",
-    "price": 0.0017505033265918443,
+    "lastestMarketPrice": 0.0017505033265918443,
     "cmcId": 2682
   },
   {
     "id": "SC",
     "symbol": "SC",
     "name": "Siacoin",
-    "price": 0.005247422145234229,
+    "lastestMarketPrice": 0.005247422145234229,
     "cmcId": 1042
   },
   {
     "id": "GMX",
     "symbol": "GMX",
     "name": "GMX",
-    "price": 31.59129484832536,
+    "lastestMarketPrice": 31.59129484832536,
     "cmcId": 11857
   },
   {
     "id": "ARKM",
     "symbol": "ARKM",
     "name": "Arkham",
-    "price": 1.4396188805508485,
+    "lastestMarketPrice": 1.4396188805508485,
     "cmcId": 27565
   },
   {
     "id": "TRAC",
     "symbol": "TRAC",
     "name": "OriginTrail",
-    "price": 0.7218936237172513,
+    "lastestMarketPrice": 0.7218936237172513,
     "cmcId": 2467
   },
   {
     "id": "ETHW",
     "symbol": "ETHW",
     "name": "EthereumPoW",
-    "price": 2.721562683926919,
+    "lastestMarketPrice": 2.721562683926919,
     "cmcId": 21296
   },
   {
     "id": "BAT",
     "symbol": "BAT",
     "name": "Basic Attention Token",
-    "price": 0.19453405634862128,
+    "lastestMarketPrice": 0.19453405634862128,
     "cmcId": 1697
   },
   {
     "id": "XRD",
     "symbol": "XRD",
     "name": "Radix",
-    "price": 0.02770042573310545,
+    "lastestMarketPrice": 0.02770042573310545,
     "cmcId": 11948
   },
   {
     "id": "ELF",
     "symbol": "ELF",
     "name": "aelf",
-    "price": 0.3937567442664056,
+    "lastestMarketPrice": 0.3937567442664056,
     "cmcId": 2299
   },
   {
     "id": "JST",
     "symbol": "JST",
     "name": "JUST",
-    "price": 0.028626685196458185,
+    "lastestMarketPrice": 0.028626685196458185,
     "cmcId": 5488
   },
   {
     "id": "METIS",
     "symbol": "METIS",
     "name": "Metis",
-    "price": 49.49112867536855,
+    "lastestMarketPrice": 49.49112867536855,
     "cmcId": 9640
   },
   {
     "id": "QTUM",
     "symbol": "QTUM",
     "name": "Qtum",
-    "price": 2.6520381391691186,
+    "lastestMarketPrice": 2.6520381391691186,
     "cmcId": 1684
   },
   {
     "id": "RSR",
     "symbol": "RSR",
     "name": "Reserve Rights",
-    "price": 0.005453531649838296,
+    "lastestMarketPrice": 0.005453531649838296,
     "cmcId": 3964
   },
   {
     "id": "ETHFI",
     "symbol": "ETHFI",
     "name": "ether.fi",
-    "price": 2.399478198246487,
+    "lastestMarketPrice": 2.399478198246487,
     "cmcId": 29814
   },
   {
     "id": "RVN",
     "symbol": "RVN",
     "name": "Ravencoin",
-    "price": 0.01944071306812686,
+    "lastestMarketPrice": 0.01944071306812686,
     "cmcId": 2577
   },
   {
     "id": "CVX",
     "symbol": "CVX",
     "name": "Convex Finance",
-    "price": 2.792580466020352,
+    "lastestMarketPrice": 2.792580466020352,
     "cmcId": 9903
   },
   {
     "id": "PRIME",
     "symbol": "PRIME",
     "name": "Echelon Prime",
-    "price": 7.443781396597016,
+    "lastestMarketPrice": 7.443781396597016,
     "cmcId": 23711
   },
   {
     "id": "SKL",
     "symbol": "SKL",
     "name": "SKALE",
-    "price": 0.0481722714359815,
+    "lastestMarketPrice": 0.0481722714359815,
     "cmcId": 5691
   },
   {
     "id": "IO",
     "symbol": "IO",
     "name": "io.net",
-    "price": 2.774389960462854,
+    "lastestMarketPrice": 2.774389960462854,
     "cmcId": 29835
   },
   {
     "id": "CSPR",
     "symbol": "CSPR",
     "name": "Casper",
-    "price": 0.02111582175550134,
+    "lastestMarketPrice": 0.02111582175550134,
     "cmcId": 5899
   },
   {
     "id": "BICO",
     "symbol": "BICO",
     "name": "Biconomy",
-    "price": 0.31649543435389543,
+    "lastestMarketPrice": 0.31649543435389543,
     "cmcId": 9543
   },
   {
     "id": "GAS",
     "symbol": "GAS",
     "name": "Gas",
-    "price": 3.78203852577427,
+    "lastestMarketPrice": 3.78203852577427,
     "cmcId": 1785
   },
   {
     "id": "CFG",
     "symbol": "CFG",
     "name": "Centrifuge",
-    "price": 0.4888074986477656,
+    "lastestMarketPrice": 0.4888074986477656,
     "cmcId": 6748
   },
   {
     "id": "EDU",
     "symbol": "EDU",
     "name": "Open Campus",
-    "price": 0.720970807418449,
+    "lastestMarketPrice": 0.720970807418449,
     "cmcId": 24613
   },
   {
     "id": "MASK",
     "symbol": "MASK",
     "name": "Mask Network",
-    "price": 2.3747936637699594,
+    "lastestMarketPrice": 2.3747936637699594,
     "cmcId": 8536
   },
   {
     "id": "FLUX",
     "symbol": "FLUX",
     "name": "Flux",
-    "price": 0.6774432431112244,
+    "lastestMarketPrice": 0.6774432431112244,
     "cmcId": 3029
   },
   {
     "id": "EDLC",
     "symbol": "EDLC",
     "name": "Edelcoin",
-    "price": 1.1250007804583289,
+    "lastestMarketPrice": 1.1250007804583289,
     "cmcId": 28112
   },
   {
     "id": "USDe",
     "symbol": "USDe",
     "name": "Ethena USDe",
-    "price": 0.9996854203102631,
+    "lastestMarketPrice": 0.9996854203102631,
     "cmcId": 29470
   },
   {
     "id": "ZBU",
     "symbol": "ZBU",
     "name": "Zeebu",
-    "price": 4.862510632334621,
+    "lastestMarketPrice": 4.862510632334621,
     "cmcId": 27765
   },
   {
     "id": "CHEEL",
     "symbol": "CHEEL",
     "name": "Cheelee",
-    "price": 21.97188788257555,
+    "lastestMarketPrice": 21.97188788257555,
     "cmcId": 23054
   },
   {
     "id": "FLZ",
     "symbol": "FLZ",
     "name": "Fellaz",
-    "price": 1.9914457385155044,
+    "lastestMarketPrice": 1.9914457385155044,
     "cmcId": 20787
   },
   {
     "id": "FTN",
     "symbol": "FTN",
     "name": "Fasttoken",
-    "price": 2.3361992515159513,
+    "lastestMarketPrice": 2.3361992515159513,
     "cmcId": 22615
   },
   {
     "id": "FRAX",
     "symbol": "FRAX",
     "name": "Frax",
-    "price": 0.9966723679880292,
+    "lastestMarketPrice": 0.9966723679880292,
     "cmcId": 6952
   },
   {
     "id": "AERO",
     "symbol": "AERO",
     "name": "Aerodrome Finance",
-    "price": 0.8580776570265665,
+    "lastestMarketPrice": 0.8580776570265665,
     "cmcId": 29270
   },
   {
     "id": "IPV",
     "symbol": "IPV",
     "name": "IPVERSE",
-    "price": 2.9651284401683937,
+    "lastestMarketPrice": 2.9651284401683937,
     "cmcId": 28367
   },
   {
     "id": "DOG",
     "symbol": "DOG",
     "name": "Dog (Runes)",
-    "price": 0.004179050839140963,
+    "lastestMarketPrice": 0.004179050839140963,
     "cmcId": 30933
   },
   {
     "id": "TURBO",
     "symbol": "TURBO",
     "name": "Turbo",
-    "price": 0.006285292132762972,
+    "lastestMarketPrice": 0.006285292132762972,
     "cmcId": 24911
   },
   {
     "id": "H2O",
     "symbol": "H2O",
     "name": "H2O DAO",
-    "price": 0.4703339741632277,
+    "lastestMarketPrice": 0.4703339741632277,
     "cmcId": 19091
   },
   {
     "id": "G",
     "symbol": "G",
     "name": "Gravity",
-    "price": 0.052904825783740624,
+    "lastestMarketPrice": 0.052904825783740624,
     "cmcId": 32120
   },
   {
     "id": "USDB",
     "symbol": "USDB",
     "name": "USDB",
-    "price": 0.9988588788515543,
+    "lastestMarketPrice": 0.9988588788515543,
     "cmcId": 29599
   },
   {
     "id": "BDX",
     "symbol": "BDX",
     "name": "Beldex",
-    "price": 0.04716378263834815,
+    "lastestMarketPrice": 0.04716378263834815,
     "cmcId": 3987
   },
   {
     "id": "ATH",
     "symbol": "ATH",
     "name": "Aethir",
-    "price": 0.07679013122659707,
+    "lastestMarketPrice": 0.07679013122659707,
     "cmcId": 30083
   },
   {
     "id": "PEPECOIN",
     "symbol": "PEPECOIN",
     "name": "PepeCoin",
-    "price": 2.5946772179862183,
+    "lastestMarketPrice": 2.5946772179862183,
     "cmcId": 24835
   },
   {
     "id": "TRUMP",
     "symbol": "TRUMP",
     "name": "MAGA",
-    "price": 6.113214754587666,
+    "lastestMarketPrice": 6.113214754587666,
     "cmcId": 27872
   },
   {
     "id": "MGC",
     "symbol": "MGC",
     "name": "Meta Games Coin",
-    "price": 0.24260750147526422,
+    "lastestMarketPrice": 0.24260750147526422,
     "cmcId": 29839
   },
   {
     "id": "APU",
     "symbol": "APU",
     "name": "Apu Apustaja",
-    "price": 0.0008382586277567316,
+    "lastestMarketPrice": 0.0008382586277567316,
     "cmcId": 30008
   },
   {
     "id": "TRIBE",
     "symbol": "TRIBE",
     "name": "Tribe",
-    "price": 0.4822822155522092,
+    "lastestMarketPrice": 0.4822822155522092,
     "cmcId": 9025
   },
   {
     "id": "PAAL",
     "symbol": "PAAL",
     "name": "PAAL AI",
-    "price": 0.29730755930138386,
+    "lastestMarketPrice": 0.29730755930138386,
     "cmcId": 27178
   },
   {
     "id": "RLB",
     "symbol": "RLB",
     "name": "Rollbit Coin",
-    "price": 0.08899230661521658,
+    "lastestMarketPrice": 0.08899230661521658,
     "cmcId": 15271
   },
   {
     "id": "POLYX",
     "symbol": "POLYX",
     "name": "Polymesh",
-    "price": 0.271985102338941,
+    "lastestMarketPrice": 0.271985102338941,
     "cmcId": 20362
   },
   {
     "id": "T",
     "symbol": "T",
     "name": "Threshold",
-    "price": 0.023239856888923487,
+    "lastestMarketPrice": 0.023239856888923487,
     "cmcId": 17751
   },
   {
     "id": "ORBR",
     "symbol": "ORBR",
     "name": "Orbler",
-    "price": 0.2162490157152448,
+    "lastestMarketPrice": 0.2162490157152448,
     "cmcId": 17520
   },
   {
     "id": "LRC",
     "symbol": "LRC",
     "name": "Loopring",
-    "price": 0.16036342340057966,
+    "lastestMarketPrice": 0.16036342340057966,
     "cmcId": 1934
   },
   {
     "id": "MWC",
     "symbol": "MWC",
     "name": "MimbleWimbleCoin",
-    "price": 19.774069583871725,
+    "lastestMarketPrice": 19.774069583871725,
     "cmcId": 5031
   },
   {
     "id": "DSYNC",
     "symbol": "DSYNC",
     "name": "Destra Network",
-    "price": 0.2240424955244864,
+    "lastestMarketPrice": 0.2240424955244864,
     "cmcId": 29884
   },
   {
     "id": "XCH",
     "symbol": "XCH",
     "name": "Chia",
-    "price": 19.477830943053114,
+    "lastestMarketPrice": 19.477830943053114,
     "cmcId": 9258
   },
   {
     "id": "VTHO",
     "symbol": "VTHO",
     "name": "VeThor Token",
-    "price": 0.0026242898208186007,
+    "lastestMarketPrice": 0.0026242898208186007,
     "cmcId": 3012
   },
   {
     "id": "ONE",
     "symbol": "ONE",
     "name": "Harmony",
-    "price": 0.01451764635107259,
+    "lastestMarketPrice": 0.01451764635107259,
     "cmcId": 3945
   },
   {
     "id": "NPC",
     "symbol": "NPC",
     "name": "Non-Playable Coin",
-    "price": 0.02944071476388711,
+    "lastestMarketPrice": 0.02944071476388711,
     "cmcId": 27960
   },
   {
     "id": "QUBIC",
     "symbol": "QUBIC",
     "name": "Qubic",
-    "price": 0.0000019845146948368986,
+    "lastestMarketPrice": 0.0000019845146948368986,
     "cmcId": 29169
   },
   {
     "id": "BAND",
     "symbol": "BAND",
     "name": "Band Protocol",
-    "price": 1.3964094217711003,
+    "lastestMarketPrice": 1.3964094217711003,
     "cmcId": 4679
   },
   {
     "id": "DCR",
     "symbol": "DCR",
     "name": "Decred",
-    "price": 12.443182660240359,
+    "lastestMarketPrice": 12.443182660240359,
     "cmcId": 1168
   },
   {
     "id": "BANANA",
     "symbol": "BANANA",
     "name": "Banana Gun",
-    "price": 62.234456041457506,
+    "lastestMarketPrice": 62.234456041457506,
     "cmcId": 28066
   },
   {
     "id": "VANRY",
     "symbol": "VANRY",
     "name": "Vanar Chain",
-    "price": 0.1275378169673198,
+    "lastestMarketPrice": 0.1275378169673198,
     "cmcId": 8037
   },
   {
     "id": "ZETA",
     "symbol": "ZETA",
     "name": "ZetaChain",
-    "price": 0.6788878341708181,
+    "lastestMarketPrice": 0.6788878341708181,
     "cmcId": 21259
   },
   {
     "id": "ZIG",
     "symbol": "ZIG",
     "name": "Zignaly",
-    "price": 0.13450565154214217,
+    "lastestMarketPrice": 0.13450565154214217,
     "cmcId": 9260
   },
   {
     "id": "CHR",
     "symbol": "CHR",
     "name": "Chromia",
-    "price": 0.23126291325146406,
+    "lastestMarketPrice": 0.23126291325146406,
     "cmcId": 3978
   },
   {
     "id": "YFI",
     "symbol": "YFI",
     "name": "yearn.finance",
-    "price": 5778.690258375928,
+    "lastestMarketPrice": 5778.690258375928,
     "cmcId": 5864
   },
   {
     "id": "TRB",
     "symbol": "TRB",
     "name": "Tellor",
-    "price": 73.77630304841495,
+    "lastestMarketPrice": 73.77630304841495,
     "cmcId": 4944
   },
   {
     "id": "UMA",
     "symbol": "UMA",
     "name": "UMA",
-    "price": 2.328825936102316,
+    "lastestMarketPrice": 2.328825936102316,
     "cmcId": 5617
   },
   {
     "id": "ACH",
     "symbol": "ACH",
     "name": "Alchemy Pay",
-    "price": 0.024113003165119433,
+    "lastestMarketPrice": 0.024113003165119433,
     "cmcId": 6958
   },
   {
     "id": "TAIKO",
     "symbol": "TAIKO",
     "name": "Taiko",
-    "price": 2.8625478577325767,
+    "lastestMarketPrice": 2.8625478577325767,
     "cmcId": 31525
   },
   {
     "id": "FXS",
     "symbol": "FXS",
     "name": "Frax Share",
-    "price": 2.3296735386279543,
+    "lastestMarketPrice": 2.3296735386279543,
     "cmcId": 6953
   },
   {
     "id": "ABT",
     "symbol": "ABT",
     "name": "Arcblock",
-    "price": 1.9092061294068525,
+    "lastestMarketPrice": 1.9092061294068525,
     "cmcId": 2545
   },
   {
     "id": "BabyDoge",
     "symbol": "BabyDoge",
     "name": "Baby Doge Coin",
-    "price": 1.306604940078499e-9,
+    "lastestMarketPrice": 1.306604940078499e-9,
     "cmcId": 10407
   },
   {
     "id": "ONT",
     "symbol": "ONT",
     "name": "Ontology",
-    "price": 0.2050622512102568,
+    "lastestMarketPrice": 0.2050622512102568,
     "cmcId": 2566
   },
   {
     "id": "AMP",
     "symbol": "AMP",
     "name": "Amp",
-    "price": 0.004395877621425848,
+    "lastestMarketPrice": 0.004395877621425848,
     "cmcId": 6945
   },
   {
     "id": "SUSHI",
     "symbol": "SUSHI",
     "name": "SushiSwap",
-    "price": 0.7048118079975947,
+    "lastestMarketPrice": 0.7048118079975947,
     "cmcId": 6758
   },
   {
     "id": "CTC",
     "symbol": "CTC",
     "name": "Creditcoin",
-    "price": 0.5159281201569229,
+    "lastestMarketPrice": 0.5159281201569229,
     "cmcId": 5198
   },
   {
     "id": "COTI",
     "symbol": "COTI",
     "name": "COTI",
-    "price": 0.11620484739558638,
+    "lastestMarketPrice": 0.11620484739558638,
     "cmcId": 3992
   },
   {
     "id": "GLMR",
     "symbol": "GLMR",
     "name": "Moonbeam",
-    "price": 0.20578230777767942,
+    "lastestMarketPrice": 0.20578230777767942,
     "cmcId": 6836
   },
   {
     "id": "BITCOIN",
     "symbol": "BITCOIN",
     "name": "HarryPotterObamaSonic10Inu (ERC-20)",
-    "price": 0.18143735200495945,
+    "lastestMarketPrice": 0.18143735200495945,
     "cmcId": 25220
   },
   {
     "id": "AUDIO",
     "symbol": "AUDIO",
     "name": "Audius",
-    "price": 0.1460845863463461,
+    "lastestMarketPrice": 0.1460845863463461,
     "cmcId": 7455
   },
   {
     "id": "USDY",
     "symbol": "USDY",
     "name": "Ondo US Dollar Yield",
-    "price": 1.0479379590100888,
+    "lastestMarketPrice": 1.0479379590100888,
     "cmcId": 29256
   },
   {
     "id": "YGG",
     "symbol": "YGG",
     "name": "Yield Guild Games",
-    "price": 0.49051116458290983,
+    "lastestMarketPrice": 0.49051116458290983,
     "cmcId": 10688
   },
   {
     "id": "$MICHI",
     "symbol": "$MICHI",
     "name": "michi (SOL)",
-    "price": 0.3203079154039428,
+    "lastestMarketPrice": 0.3203079154039428,
     "cmcId": 30943
   },
   {
     "id": "BB",
     "symbol": "BB",
     "name": "BounceBit",
-    "price": 0.4049702688693702,
+    "lastestMarketPrice": 0.4049702688693702,
     "cmcId": 30746
   },
   {
     "id": "BORG",
     "symbol": "BORG",
     "name": "SwissBorg",
-    "price": 0.18002825962690494,
+    "lastestMarketPrice": 0.18002825962690494,
     "cmcId": 2499
   },
   {
     "id": "TEL",
     "symbol": "TEL",
     "name": "Telcoin",
-    "price": 0.001938440173619434,
+    "lastestMarketPrice": 0.001938440173619434,
     "cmcId": 2394
   },
   {
     "id": "ZEN",
     "symbol": "ZEN",
     "name": "Horizen",
-    "price": 11.383234004098565,
+    "lastestMarketPrice": 11.383234004098565,
     "cmcId": 1698
   },
   {
     "id": "KDA",
     "symbol": "KDA",
     "name": "Kadena",
-    "price": 0.6134128395066104,
+    "lastestMarketPrice": 0.6134128395066104,
     "cmcId": 5647
   },
   {
     "id": "RSS3",
     "symbol": "RSS3",
     "name": "RSS3",
-    "price": 0.17254216127710478,
+    "lastestMarketPrice": 0.17254216127710478,
     "cmcId": 17917
   },
   {
     "id": "0x0",
     "symbol": "0x0",
     "name": "0x0.ai",
-    "price": 0.19559550355433653,
+    "lastestMarketPrice": 0.19559550355433653,
     "cmcId": 23355
   },
   {
     "id": "USDJ",
     "symbol": "USDJ",
     "name": "USDJ",
-    "price": 1.0841739792382983,
+    "lastestMarketPrice": 1.0841739792382983,
     "cmcId": 5446
   },
   {
     "id": "ALT",
     "symbol": "ALT",
     "name": "Altlayer",
-    "price": 0.14936175315851208,
+    "lastestMarketPrice": 0.14936175315851208,
     "cmcId": 29073
   },
   {
     "id": "API3",
     "symbol": "API3",
     "name": "API3",
-    "price": 1.8949785087821638,
+    "lastestMarketPrice": 1.8949785087821638,
     "cmcId": 7737
   },
   {
     "id": "BAL",
     "symbol": "BAL",
     "name": "Balancer",
-    "price": 2.8005660506167165,
+    "lastestMarketPrice": 2.8005660506167165,
     "cmcId": 5728
   },
   {
     "id": "ANDY",
     "symbol": "ANDY",
     "name": "ANDY (ETH)",
-    "price": 0.00016098547236884295,
+    "lastestMarketPrice": 0.00016098547236884295,
     "cmcId": 29879
   },
   {
     "id": "ALPH",
     "symbol": "ALPH",
     "name": "Alephium",
-    "price": 1.904687827440453,
+    "lastestMarketPrice": 1.904687827440453,
     "cmcId": 14878
   },
   {
     "id": "NTRN",
     "symbol": "NTRN",
     "name": "Neutron",
-    "price": 0.4798461727351557,
+    "lastestMarketPrice": 0.4798461727351557,
     "cmcId": 26680
   },
   {
     "id": "FNSA",
     "symbol": "FNSA",
     "name": "FINSCHIA",
-    "price": 19.990207895169032,
+    "lastestMarketPrice": 19.990207895169032,
     "cmcId": 4512
   },
   {
     "id": "ICX",
     "symbol": "ICX",
     "name": "ICON",
-    "price": 0.1588256665777058,
+    "lastestMarketPrice": 0.1588256665777058,
     "cmcId": 2099
   },
   {
     "id": "VENOM",
     "symbol": "VENOM",
     "name": "Venom",
-    "price": 0.16210310004630807,
+    "lastestMarketPrice": 0.16210310004630807,
     "cmcId": 22059
   },
   {
     "id": "PIXEL",
     "symbol": "PIXEL",
     "name": "Pixels",
-    "price": 0.2059273169362301,
+    "lastestMarketPrice": 0.2059273169362301,
     "cmcId": 29335
   },
   {
     "id": "SXP",
     "symbol": "SXP",
     "name": "Solar",
-    "price": 0.2557873180651449,
+    "lastestMarketPrice": 0.2557873180651449,
     "cmcId": 4279
   },
   {
     "id": "STORJ",
     "symbol": "STORJ",
     "name": "Storj",
-    "price": 0.3963611900046534,
+    "lastestMarketPrice": 0.3963611900046534,
     "cmcId": 1772
   },
   {
     "id": "XEM",
     "symbol": "XEM",
     "name": "NEM",
-    "price": 0.01671006573995573,
+    "lastestMarketPrice": 0.01671006573995573,
     "cmcId": 873
   },
   {
     "id": "SAGA",
     "symbol": "SAGA",
     "name": "Saga",
-    "price": 1.5327869411783601,
+    "lastestMarketPrice": 1.5327869411783601,
     "cmcId": 30372
   },
   {
     "id": "LSK",
     "symbol": "LSK",
     "name": "Lisk",
-    "price": 1.022147659486587,
+    "lastestMarketPrice": 1.022147659486587,
     "cmcId": 1214
   },
   {
     "id": "HONEY",
     "symbol": "HONEY",
     "name": "Hivemapper",
-    "price": 0.07116208220795718,
+    "lastestMarketPrice": 0.07116208220795718,
     "cmcId": 22850
   },
   {
     "id": "COQ",
     "symbol": "COQ",
     "name": "Coq Inu",
-    "price": 0.0000021022324138051,
+    "lastestMarketPrice": 0.0000021022324138051,
     "cmcId": 28675
   },
   {
     "id": "DESO",
     "symbol": "DESO",
     "name": "Decentralized Social",
-    "price": 16.422650155356415,
+    "lastestMarketPrice": 16.422650155356415,
     "cmcId": 10442
   },
   {
     "id": "SLERF",
     "symbol": "SLERF",
     "name": "SLERF",
-    "price": 0.28793470015234723,
+    "lastestMarketPrice": 0.28793470015234723,
     "cmcId": 29920
   },
   {
     "id": "AGI",
     "symbol": "AGI",
     "name": "Delysium",
-    "price": 0.18413720208748785,
+    "lastestMarketPrice": 0.18413720208748785,
     "cmcId": 24007
   },
   {
     "id": "TRU",
     "symbol": "TRU",
     "name": "TrueFi",
-    "price": 0.12205981354301638,
+    "lastestMarketPrice": 0.12205981354301638,
     "cmcId": 7725
   },
   {
     "id": "CRVUSD",
     "symbol": "CRVUSD",
     "name": "crvUSD",
-    "price": 0.9949991468262773,
+    "lastestMarketPrice": 0.9949991468262773,
     "cmcId": 24927
   },
   {
     "id": "MYRO",
     "symbol": "MYRO",
     "name": "Myro",
-    "price": 0.14690484142608512,
+    "lastestMarketPrice": 0.14690484142608512,
     "cmcId": 28382
   },
   {
     "id": "POND",
     "symbol": "POND",
     "name": "Marlin",
-    "price": 0.017087471642562795,
+    "lastestMarketPrice": 0.017087471642562795,
     "cmcId": 7497
   },
   {
     "id": "JOE",
     "symbol": "JOE",
     "name": "JOE",
-    "price": 0.382782441450109,
+    "lastestMarketPrice": 0.382782441450109,
     "cmcId": 11396
   },
   {
     "id": "SURE",
     "symbol": "SURE",
     "name": "inSure DeFi",
-    "price": 0.005094169999154247,
+    "lastestMarketPrice": 0.005094169999154247,
     "cmcId": 5113
   },
   {
     "id": "WAXP",
     "symbol": "WAXP",
     "name": "WAX",
-    "price": 0.03950266750663359,
+    "lastestMarketPrice": 0.03950266750663359,
     "cmcId": 2300
   },
   {
     "id": "ORCA",
     "symbol": "ORCA",
     "name": "Orca",
-    "price": 2.635231331543526,
+    "lastestMarketPrice": 2.635231331543526,
     "cmcId": 11165
   },
   {
     "id": "ONG",
     "symbol": "ONG",
     "name": "Ontology Gas",
-    "price": 0.3496315434479712,
+    "lastestMarketPrice": 0.3496315434479712,
     "cmcId": 3217
   },
   {
     "id": "EURS",
     "symbol": "EURS",
     "name": "STASIS EURO",
-    "price": 1.0858965956897129,
+    "lastestMarketPrice": 1.0858965956897129,
     "cmcId": 2989
   },
   {
     "id": "C98",
     "symbol": "C98",
     "name": "Coin98",
-    "price": 0.16070906820789743,
+    "lastestMarketPrice": 0.16070906820789743,
     "cmcId": 10903
   },
   {
     "id": "BMX",
     "symbol": "BMX",
     "name": "BitMart Token",
-    "price": 0.4114494534243937,
+    "lastestMarketPrice": 0.4114494534243937,
     "cmcId": 2933
   }
 ]
