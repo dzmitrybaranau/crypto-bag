@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TokenRow.module.scss";
 import { ITokenTransaction } from "@/store/useUserStore";
 import { getTokenById } from "@/utils/getTokenById";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
+import { useTokenPricesStore } from "@/store/useTokenPricesStore";
 
 export interface ITokenRowProps {
   tokenId: string;
@@ -15,6 +16,24 @@ export interface ITokenRowProps {
 function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
   const token = getTokenById(tokenId);
   const { amount, lastPrice } = getTokenInfoFromHistory(tokenTransactions);
+  const {
+    tokenPrices,
+    setTokenPrice,
+    isLoading: isLoadingTokenPrice,
+  } = useTokenPricesStore((state) => ({
+    ...state,
+  }));
+
+  useEffect(() => {
+    const getPairPrice = () => {
+      if (!tokenPrices[tokenId]) {
+        return setTokenPrice({ tokenId });
+      }
+    };
+    getPairPrice();
+  }, [tokenPrices, setTokenPrice, tokenId]);
+
+  const price = tokenPrices?.[tokenId] ?? 0;
 
   return (
     <div className={styles.root}>
@@ -28,10 +47,10 @@ function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
           <div>
             <b>{token.symbol}</b>
           </div>
-          <div>${(parseFloat(lastPrice) * amount).toFixed(0)}</div>
+          <div>${(price * amount).toFixed(0)}</div>
         </div>
         <div className={styles.infoRow}>
-          <div>${lastPrice}</div>
+          <div>${price}</div>
           <div>{amount}</div>
         </div>
       </div>

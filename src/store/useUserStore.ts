@@ -102,6 +102,7 @@ export const useUserStore = create<UserStore>((set) => ({
         userAccount: {
           ...state.userAccount,
           tokenTransactions: {
+            ...state.userAccount.tokenTransactions,
             [tokenId]: [
               ...(state.userAccount?.tokenTransactions?.tokenId ?? []),
               newTransaction,

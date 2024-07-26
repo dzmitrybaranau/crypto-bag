@@ -13,6 +13,8 @@ import Button from "@/components/TotalBalance/components/Button/Button";
 import { getAllTokens } from "@/utils/getAllTokens";
 import { useUserStore } from "@/store";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
+import { useTokenPricesStore } from "@/store/useTokenPricesStore";
+import { getTokenPriceFromBinance } from "@/utils/getTokenPriceFromBinance";
 
 export interface ITokenFormProps {
   onSubmit: ({
@@ -58,6 +60,31 @@ function TokenForm({
   const [formState, setFormState] = useState<IFormState>(formData);
   const user = useUserStore((state) => state.userAccount);
   const userTokenOptions = Object.keys(user?.tokenTransactions ?? {});
+  const {
+    tokenPrices,
+    setTokenPrice,
+    isLoading: isLoadingTokenPrice,
+  } = useTokenPricesStore((state) => ({
+    ...state,
+  }));
+
+  useEffect(() => {
+    const fetchTokenPrice = async () => {
+      if (formState.token?.value) {
+        setTokenPrice({ tokenId: formState.token.value });
+      }
+    };
+    fetchTokenPrice();
+  }, [formState.token?.value, setTokenPrice]);
+
+  useEffect(() => {
+    if (tokenPrices[formState.token?.value ?? ""]) {
+      setFormState({
+        ...formState,
+        price: tokenPrices[formState.token?.value ?? ""].toString(),
+      });
+    }
+  }, [tokenPrices, formState.token?.value]);
 
   useEffect(() => {
     if (formState.usdt && formState.amount) {
@@ -219,8 +246,13 @@ function TokenForm({
             type="number"
             id="price"
             value={formState.price}
+            disabled={isLoadingTokenPrice}
             placeholder={
-              estimatedPrice ? `~${parseFloat(estimatedPrice)}` : undefined
+              isLoadingTokenPrice
+                ? "Loading..."
+                : tokenPrices[formState.token?.value ?? ""]
+                  ? tokenPrices[formState.token?.value ?? ""].toString()
+                  : "0"
             }
             onChange={handleInputChange}
           />
