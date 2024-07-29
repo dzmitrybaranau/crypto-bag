@@ -14,7 +14,6 @@ import { getAllTokens } from "@/utils/getAllTokens";
 import { useUserStore } from "@/store";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
 import { useTokenPricesStore } from "@/store/useTokenPricesStore";
-import { getTokenPriceFromBinance } from "@/utils/getTokenPriceFromBinance";
 
 export interface ITokenFormProps {
   onSubmit: ({
@@ -70,12 +69,12 @@ function TokenForm({
 
   useEffect(() => {
     const fetchTokenPrice = async () => {
-      if (formState.token?.value) {
+      if (formState.token?.value && !tokenPrices[formState.token?.value]) {
         setTokenPrice({ tokenId: formState.token.value });
       }
     };
     fetchTokenPrice();
-  }, [formState.token?.value, setTokenPrice]);
+  }, [formState.token?.value, setTokenPrice, tokenPrices]);
 
   useEffect(() => {
     if (tokenPrices[formState.token?.value ?? ""]) {
@@ -85,21 +84,6 @@ function TokenForm({
       });
     }
   }, [tokenPrices, formState.token?.value]);
-
-  useEffect(() => {
-    if (formState.usdt && formState.amount) {
-      const newPrice = parseFloat(
-        (parseFloat(formState.usdt) / parseFloat(formState.amount)).toFixed(6),
-      ).toString();
-
-      if (newPrice !== formState.price) {
-        setFormState((prevState) => ({
-          ...prevState,
-          price: newPrice,
-        }));
-      }
-    }
-  }, [formState.usdt, formState.amount, formState.price]);
 
   const handleTokenSelect = (option: SingleValue<ITokenOption>) => {
     if (type === "sell") {
@@ -111,29 +95,64 @@ function TokenForm({
         const { amount, lastPrice } = getTokenInfoFromHistory(
           user.tokenTransactions[option.value],
         );
-        setFormState((prevState) => ({
+        return setFormState((prevState) => ({
           ...prevState,
           amount: amount.toString(),
           token: option as ITokenOption,
-          price: lastPrice,
-          usdt: (amount * parseFloat(lastPrice)).toFixed(0).toString(),
         }));
       }
     }
     return setFormState((prevState) => ({
       ...prevState,
       token: option as ITokenOption,
+      amount: undefined,
+      usdt: undefined,
     }));
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    setFormState((prevState) => ({
-      ...prevState,
-      [id]: value,
-    }));
-  };
+    const numValue = value === "" ? "" : parseFloat(value);
 
+    setFormState((prevState) => {
+      const newState = { ...prevState, [id]: value };
+
+      if (id === "usdt") {
+        if (newState.price && newState.price !== "0") {
+          newState.amount =
+            numValue === ""
+              ? ""
+              : (numValue / parseFloat(newState.price)).toString();
+        }
+      } else if (id === "amount") {
+        if (newState.price && newState.price !== "0") {
+          newState.usdt =
+            numValue === ""
+              ? ""
+              : (numValue * parseFloat(newState.price)).toString();
+        } else if (newState.usdt) {
+          newState.price =
+            numValue === ""
+              ? ""
+              : (parseFloat(newState.usdt) / numValue).toString();
+        }
+      } else if (id === "price") {
+        if (newState.amount) {
+          newState.usdt =
+            numValue === ""
+              ? ""
+              : (numValue * parseFloat(newState.amount)).toString();
+        } else if (newState.usdt) {
+          newState.amount =
+            numValue === ""
+              ? ""
+              : (parseFloat(newState.usdt) / numValue).toString();
+        }
+      }
+
+      return newState;
+    });
+  };
   const handleSubmit: MouseEventHandler = (e) => {
     e.preventDefault();
     if (formState.token?.value && formState.amount && formState.price) {
@@ -248,11 +267,13 @@ function TokenForm({
             value={formState.price}
             disabled={isLoadingTokenPrice}
             placeholder={
-              isLoadingTokenPrice
-                ? "Loading..."
-                : tokenPrices[formState.token?.value ?? ""]
-                  ? tokenPrices[formState.token?.value ?? ""].toString()
-                  : "0"
+              !isLoadingTokenPrice && !tokenPrices[formState.token?.value ?? ""]
+                ? ""
+                : isLoadingTokenPrice
+                  ? "Loading..."
+                  : tokenPrices[formState.token?.value ?? ""]
+                    ? tokenPrices[formState.token?.value ?? ""].toString()
+                    : "0"
             }
             onChange={handleInputChange}
           />

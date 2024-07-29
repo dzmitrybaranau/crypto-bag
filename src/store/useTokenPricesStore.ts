@@ -11,7 +11,7 @@ interface ITokenPricesStore {
 
 export const useTokenPricesStore = create<ITokenPricesStore>((set) => ({
   tokenPrices: {},
-  isLoading: true,
+  isLoading: false,
   setTokenPrice: async ({ tokenId }) => {
     set((state) => ({ ...state, isLoading: true }));
     try {
@@ -27,7 +27,10 @@ export const useTokenPricesStore = create<ITokenPricesStore>((set) => ({
       }));
     } catch (e) {
     } finally {
-      set((state) => ({ ...state, isLoading: false }));
+      set((state) => ({
+        ...state,
+        isLoading: false,
+      }));
     }
   },
 }));
