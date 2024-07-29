@@ -118,74 +118,102 @@ function TokenForm({
     const isValidInput = /^-?\d*\.?\d*$/.test(value);
     if (!isValidInput && value !== "") return;
 
+    // Keep the original value for the changed field
+    let originalValue = value;
     let numValue = value === "" ? 0 : parseFloat(value);
 
     // Don't allow negative numbers
     if (numValue < 0) {
       numValue = 0;
-    }
-
-    // Check if user is selling and limit the amount
-    if (type === "sell" && id === "amount" && formState.token?.value) {
-      const { amount: userTokenAmount } = getTokenInfoFromHistory(
-        user?.tokenTransactions?.[
-          formState.token?.value
-        ] as ITokenTransaction[],
-      );
-      if (numValue > userTokenAmount) {
-        numValue = userTokenAmount;
-      }
-    }
-
-    // price change
-    if (type === "sell" && id === "amount" && formState.token?.value) {
-      const { amount: userTokenAmount } = getTokenInfoFromHistory(
-          user?.tokenTransactions?.[
-              formState.token?.value
-              ] as ITokenTransaction[],
-      );
-      if (numValue > userTokenAmount) {
-        numValue = userTokenAmount;
-      }
+      originalValue = "0";
     }
 
     setFormState((prevState) => {
       // Use the original input value for the changed field to preserve "0." inputs
       const newState = {
         ...prevState,
-        [id]: numValue.toString(),
+        [id]: originalValue,
       };
 
-      if (id === "usdt") {
-        if (newState.price && newState.price !== "0") {
+      if (type === "sell" && formState.token?.value) {
+        const { amount: userTokenAmount } = getTokenInfoFromHistory(
+          user?.tokenTransactions?.[
+            formState.token.value
+          ] as ITokenTransaction[],
+        );
+
+        const calculateAndLimitAmount = (amount: number) => {
+          return Math.min(amount, userTokenAmount);
+        };
+
+        if (id === "usdt") {
+          if (newState.price && newState.price !== "0") {
+            const calculatedAmount = numValue / parseFloat(newState.price);
+            const limitedAmount = calculateAndLimitAmount(calculatedAmount);
+            newState.amount = limitedAmount.toString();
+            // Keep the original USDT input if it's within limits
+            if (calculatedAmount <= userTokenAmount) {
+              newState.usdt = originalValue;
+            } else {
+              newState.usdt = (
+                limitedAmount * parseFloat(newState.price)
+              ).toString();
+            }
+          }
+        } else if (id === "amount") {
+          const limitedAmount = calculateAndLimitAmount(numValue);
+          // Keep the original amount input if it's within limits
           newState.amount =
-            value === ""
-              ? ""
-              : (numValue / parseFloat(newState.price)).toString();
+            numValue <= userTokenAmount
+              ? originalValue
+              : limitedAmount.toString();
+          if (newState.price && newState.price !== "0") {
+            newState.usdt = (
+              limitedAmount * parseFloat(newState.price)
+            ).toString();
+          }
+        } else if (id === "price") {
+          if (newState.amount) {
+            const maxAllowedUsdt = userTokenAmount * numValue;
+            const calculatedUsdt = parseFloat(newState.amount) * numValue;
+            // Keep the original price input
+            newState.price = originalValue;
+            if (calculatedUsdt <= maxAllowedUsdt) {
+              newState.usdt = (
+                parseFloat(newState.amount) * numValue
+              ).toString();
+            } else {
+              newState.usdt = maxAllowedUsdt.toString();
+              newState.amount = (maxAllowedUsdt / numValue).toString();
+            }
+          }
         }
-      } else if (id === "amount") {
-        if (newState.price && newState.price !== "0") {
-          newState.usdt =
-            value === ""
-              ? ""
-              : (numValue * parseFloat(newState.price)).toString();
-        } else if (newState.usdt) {
-          newState.price =
-            value === "" || value === "0"
-              ? ""
-              : (parseFloat(newState.usdt) / numValue).toString();
-        }
-      } else if (id === "price") {
-        if (newState.amount) {
-          newState.usdt =
-            value === ""
-              ? ""
-              : (numValue * parseFloat(newState.amount)).toString();
-        } else if (newState.usdt) {
-          newState.amount =
-            numValue === 0
-              ? ""
-              : (parseFloat(newState.usdt) / numValue).toString();
+      } else {
+        // Logic for buy transactions or when token is not selected
+        if (id === "usdt") {
+          if (newState.price && newState.price !== "0") {
+            newState.amount = (
+              numValue / parseFloat(newState.price)
+            ).toString();
+          }
+        } else if (id === "amount") {
+          if (newState.price && newState.price !== "0") {
+            newState.usdt = (numValue * parseFloat(newState.price)).toString();
+          } else if (newState.usdt) {
+            newState.price =
+              numValue === 0
+                ? ""
+                : (parseFloat(newState.usdt) / numValue).toString();
+          }
+        } else if (id === "price") {
+          if (newState.amount) {
+            newState.usdt = (numValue * parseFloat(newState.amount)).toString();
+          } else if (newState.usdt) {
+            newState.amount =
+              numValue === 0
+                ? ""
+                : (parseFloat(newState.usdt) / numValue).toString();
+          }
         }
       }
 
