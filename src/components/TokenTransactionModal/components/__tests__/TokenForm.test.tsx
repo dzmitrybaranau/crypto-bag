@@ -59,7 +59,7 @@ describe("TokenForm", () => {
     );
   };
 
-  xtest("renders correctly", () => {
+  test("renders correctly", () => {
     renderComponent();
     expect(screen.getByText("Token")).toBeInTheDocument();
     expect(screen.getByText("USDT ($)")).toBeInTheDocument();
@@ -67,14 +67,14 @@ describe("TokenForm", () => {
     expect(screen.getByText("Price")).toBeInTheDocument();
   });
 
-  xtest("calls onClose when close button is clicked", () => {
+  test("calls onClose when close button is clicked", () => {
     renderComponent();
     const closeButton = screen.getByRole("button", { name: "Close" });
     fireEvent.click(closeButton);
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
 
-  xtest("calls handleSubmit when form is submitted", () => {
+  test("calls handleSubmit when form is submitted", () => {
     renderComponent();
     const form = screen.getByRole("form");
     fireEvent.submit(form);
