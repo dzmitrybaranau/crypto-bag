@@ -14,6 +14,7 @@ import { getAllTokens } from "@/utils/getAllTokens";
 import { useUserStore } from "@/store";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
 import { useTokenPricesStore } from "@/store/useTokenPricesStore";
+import { ITokenTransaction } from "@/store/useUserStore";
 
 export interface ITokenFormProps {
   onSubmit: ({
@@ -112,39 +113,77 @@ function TokenForm({
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    const numValue = value === "" ? "" : parseFloat(value);
+
+    // Allow decimal inputs, including those starting with "0."
+    const isValidInput = /^-?\d*\.?\d*$/.test(value);
+    if (!isValidInput && value !== "") return;
+
+    let numValue = value === "" ? 0 : parseFloat(value);
+
+    // Don't allow negative numbers
+    if (numValue < 0) {
+      numValue = 0;
+    }
+
+    // Check if user is selling and limit the amount
+    if (type === "sell" && id === "amount" && formState.token?.value) {
+      const { amount: userTokenAmount } = getTokenInfoFromHistory(
+        user?.tokenTransactions?.[
+          formState.token?.value
+        ] as ITokenTransaction[],
+      );
+      if (numValue > userTokenAmount) {
+        numValue = userTokenAmount;
+      }
+    }
+
+    // price change
+    if (type === "sell" && id === "amount" && formState.token?.value) {
+      const { amount: userTokenAmount } = getTokenInfoFromHistory(
+          user?.tokenTransactions?.[
+              formState.token?.value
+              ] as ITokenTransaction[],
+      );
+      if (numValue > userTokenAmount) {
+        numValue = userTokenAmount;
+      }
+    }
 
     setFormState((prevState) => {
-      const newState = { ...prevState, [id]: value };
+      // Use the original input value for the changed field to preserve "0." inputs
+      const newState = {
+        ...prevState,
+        [id]: numValue.toString(),
+      };
 
       if (id === "usdt") {
         if (newState.price && newState.price !== "0") {
           newState.amount =
-            numValue === ""
+            value === ""
               ? ""
               : (numValue / parseFloat(newState.price)).toString();
         }
       } else if (id === "amount") {
         if (newState.price && newState.price !== "0") {
           newState.usdt =
-            numValue === ""
+            value === ""
               ? ""
               : (numValue * parseFloat(newState.price)).toString();
         } else if (newState.usdt) {
           newState.price =
-            numValue === ""
+            value === "" || value === "0"
               ? ""
               : (parseFloat(newState.usdt) / numValue).toString();
         }
       } else if (id === "price") {
         if (newState.amount) {
           newState.usdt =
-            numValue === ""
+            value === ""
               ? ""
               : (numValue * parseFloat(newState.amount)).toString();
         } else if (newState.usdt) {
           newState.amount =
-            numValue === ""
+            numValue === 0
               ? ""
               : (parseFloat(newState.usdt) / numValue).toString();
         }
