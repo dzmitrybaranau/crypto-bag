@@ -8,7 +8,6 @@ export const getTokenInfoFromHistory = (tokenHistory: ITokenTransaction[]) => {
 
   const amount = sortedTokenHistory.reduce(
     (p, c) => {
-      console.log({ p, c });
       if (c.type === "buy") {
         return { amount: p.amount + parseFloat(c.amount) };
       }

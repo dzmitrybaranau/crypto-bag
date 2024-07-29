@@ -12,10 +12,10 @@ function Input(props: ITextInputProps) {
   const { label, ...inputProps } = props;
   return (
     <div className={styles.root}>
-      <label htmlFor="" className={styles.label}>
+      <label htmlFor={inputProps.id} className={styles.label}>
         {label}
       </label>
-      <input type="text" className={styles.input} {...inputProps}/>
+      <input type="text" className={styles.input} {...inputProps} />
     </div>
   );
 }
