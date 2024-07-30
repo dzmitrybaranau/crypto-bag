@@ -81,13 +81,17 @@ export const useTokenForm = (
         }));
       }
     }
+    console.log("SET STATE");
     return setFormState((prevState) => ({
       ...prevState,
       token: option as ITokenOption,
       amount: undefined,
       usdt: undefined,
+      price: undefined,
     }));
   };
+
+  console.log({ formState });
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;

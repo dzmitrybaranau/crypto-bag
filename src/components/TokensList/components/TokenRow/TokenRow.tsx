@@ -4,6 +4,7 @@ import { ITokenTransaction } from "@/store/useUserStore";
 import { getTokenById } from "@/utils/getTokenById";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
 import { useTokenPricesStore } from "@/store/useTokenPricesStore";
+import { formatDecimals } from "@/utils/formatDecimals";
 
 export interface ITokenRowProps {
   tokenId: string;
@@ -27,11 +28,14 @@ function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
   useEffect(() => {
     const getPairPrice = () => {
       if (!tokenPrices[tokenId]) {
-        return setTokenPrice({ tokenId });
+        return setTokenPrice({
+          tokenId,
+          tokenTransactionHistory: tokenTransactions,
+        });
       }
     };
     getPairPrice();
-  }, [tokenPrices, setTokenPrice, tokenId]);
+  }, [tokenPrices, setTokenPrice, tokenId, tokenTransactions]);
 
   const price = tokenPrices?.[tokenId] ?? 0;
 
@@ -47,11 +51,11 @@ function TokenRow({ tokenTransactions, tokenId }: ITokenRowProps) {
           <div>
             <b>{token.symbol}</b>
           </div>
-          <div>${(price * amount).toFixed(0)}</div>
+          <div>${formatDecimals((price * amount).toFixed(0))}</div>
         </div>
         <div className={styles.infoRow}>
-          <div>${price}</div>
-          <div>{amount}</div>
+          <div>${formatDecimals(price)}</div>
+          <div>{formatDecimals(amount)}</div>
         </div>
       </div>
     </div>

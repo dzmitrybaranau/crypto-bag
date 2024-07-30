@@ -8,6 +8,7 @@ import {
   ITokenOption,
   useTokenForm,
 } from "@/components/TokenTransactionModal/hooks/useTokenForm";
+import { formatDecimals } from "@/utils/formatDecimals";
 
 export interface ITokenFormProps {
   onSubmit: ({
@@ -61,7 +62,7 @@ function TokenForm({ onSubmit, onClose, type }: ITokenFormProps) {
             label="USDT ($)"
             type="number"
             id="usdt"
-            value={usdt}
+            value={formatDecimals(usdt)}
             onChange={handleInputChange}
           />
         </div>
@@ -70,7 +71,7 @@ function TokenForm({ onSubmit, onClose, type }: ITokenFormProps) {
             label="Amount"
             type="number"
             id="amount"
-            value={amount}
+            value={formatDecimals(amount)}
             onChange={handleInputChange}
           />
         </div>
@@ -79,7 +80,7 @@ function TokenForm({ onSubmit, onClose, type }: ITokenFormProps) {
             label="Price"
             type="number"
             id="price"
-            value={price}
+            value={formatDecimals(price)}
             disabled={isLoadingTokenPrice}
             placeholder={pricePlaceholder}
             onChange={handleInputChange}
