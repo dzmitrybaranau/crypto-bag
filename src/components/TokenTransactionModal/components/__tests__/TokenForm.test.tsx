@@ -3,9 +3,9 @@ import TokenForm from "@/components/TokenTransactionModal/components/TokenForm";
 import { useUserStore } from "@/store";
 import { useTokenPricesStore } from "@/store/useTokenPricesStore";
 import selectEvent from "react-select-event";
-import { ITokenTransaction } from "@/store/useUserStore";
+import { ITokenTransaction } from "@/store/useUserStore/useUserStore";
 
-jest.mock("@/store/useUserStore", () => ({
+jest.mock("@/store/useUserStore/useUserStore", () => ({
   useUserStore: jest.fn(() => {
     const transaction: ITokenTransaction = {
       amount: "100",

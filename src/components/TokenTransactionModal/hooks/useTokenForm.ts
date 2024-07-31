@@ -3,7 +3,7 @@ import { useUserStore } from "@/store";
 import { useTokenPricesStore } from "@/store/useTokenPricesStore";
 import { SingleValue } from "react-select";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
-import { ITokenTransaction } from "@/store/useUserStore";
+import { ITokenTransaction } from "@/store/useUserStore/useUserStore";
 import { getAllTokens } from "@/utils/getAllTokens";
 
 export interface ITokenOption {

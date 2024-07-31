@@ -1,5 +1,5 @@
 import { getAllTokens } from "@/utils/getAllTokens";
-import { IToken } from "@/store/useUserStore";
+import { IToken } from "@/store/useUserStore/useUserStore";
 
 export const getTokenById = (id: string): IToken => {
   const allTokens = getAllTokens();

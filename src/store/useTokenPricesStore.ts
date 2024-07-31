@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { getTokenPriceFromBinance } from "@/utils/getTokenPriceFromBinance";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
-import { ITokenTransaction } from "@/store/useUserStore";
+import { ITokenTransaction } from "@/store/useUserStore/useUserStore";
 
 interface ITokenPricesStore {
   tokenPrices: {

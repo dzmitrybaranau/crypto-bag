@@ -1,4 +1,4 @@
-import { ITokenTransaction } from "@/store/useUserStore";
+import { ITokenTransaction } from "@/store/useUserStore/useUserStore";
 
 export const getTokenInfoFromHistory = (tokenHistory: ITokenTransaction[]) => {
   const sortedTokenHistory = tokenHistory.sort(
