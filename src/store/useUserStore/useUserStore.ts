@@ -100,11 +100,12 @@ export const useUserStore = create<UserStore>((set) => ({
     buyToken({ set, tokenId, amount, price }),
   fetchUserAccount: async (chatId: string) => {
     try {
+      console.log("Fetch user!", chatId);
       set((state) => ({ ...state, isUserLoading: true }));
       const data = await axios.get<{
         id: string;
         transactions: Database["public"]["Tables"]["transactions"]["Row"][];
-      }>("/api/getUser");
+      }>(`/api/getUser?chatId=${chatId}`);
       const transactions = transformTransactions(data.data.transactions);
       set((state) => ({
         ...state,
@@ -115,6 +116,7 @@ export const useUserStore = create<UserStore>((set) => ({
         isUserLoading: false,
       }));
     } catch (err) {
+      console.log("ERROR", err);
     } finally {
       set((state) => ({ ...state, isUserLoading: false }));
     }
