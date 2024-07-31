@@ -26,10 +26,18 @@ function WebAppReady(props: IWebAppReadyProps) {
   }, [isTmaInfoLoading, isUserLoading, fetchUserAccount, userTmaInfo]);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof self !== "undefined") {
-      WebApp.ready();
-      WebApp.expand();
-      setUserTmaInfo(WebApp?.initDataUnsafe);
+    if (
+      typeof window !== "undefined" &&
+      typeof self !== "undefined" &&
+      WebApp
+    ) {
+      // @ts-ignore
+      WebApp.ready(() => {
+        // @ts-ignore
+        WebApp.expand(() => {
+          setUserTmaInfo(WebApp?.initDataUnsafe);
+        });
+      });
 
       import("eruda").then((eruda) => {
         eruda.default.init();
