@@ -26,27 +26,16 @@ function WebAppReady(props: IWebAppReadyProps) {
   }, [isTmaInfoLoading, isUserLoading, fetchUserAccount, userTmaInfo]);
 
   useLayoutEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      typeof self !== "undefined" &&
-      isTmaInfoLoading &&
-      WebApp.initDataUnsafe?.chat?.id
-    ) {
-      setUserTmaInfo(WebApp.initDataUnsafe);
-    }
-  }, [isTmaInfoLoading, setUserTmaInfo, WebApp]);
-
-  useEffect(() => {
     if (typeof window !== "undefined" && typeof self !== "undefined") {
-      // if (process.env.NODE_ENV === "development") {
+      WebApp.ready();
+      WebApp.expand();
+      setUserTmaInfo(WebApp?.initDataUnsafe);
+
       import("eruda").then((eruda) => {
         eruda.default.init();
       });
-      // }
-      WebApp.ready();
-      WebApp.expand();
     }
-  }, []);
+  }, [setUserTmaInfo]);
 
   console.log({ isUserLoading, isTmaInfoLoading });
 
@@ -58,6 +47,7 @@ function WebAppReady(props: IWebAppReadyProps) {
           isUserLoading,
           isTmaInfoLoading,
           id: userTmaInfo?.chat?.id,
+          webApp: WebApp.initDataUnsafe?.chat,
         })}
       </div>
     );
