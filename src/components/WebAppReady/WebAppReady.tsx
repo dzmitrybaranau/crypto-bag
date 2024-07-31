@@ -51,7 +51,16 @@ function WebAppReady(props: IWebAppReadyProps) {
   console.log({ isUserLoading, isTmaInfoLoading });
 
   if (isUserLoading) {
-    return <div className={styles.loader}>Loading</div>;
+    return (
+      <div className={styles.loader}>
+        Loading{" "}
+        {JSON.stringify({
+          isUserLoading,
+          isTmaInfoLoading,
+          id: userTmaInfo?.chat?.id,
+        })}
+      </div>
+    );
   }
 
   return <></>;
