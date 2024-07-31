@@ -3,6 +3,7 @@
 import WebApp from "@twa-dev/sdk";
 
 import React, { useEffect } from "react";
+import styles from "./WebAppReady.module.scss";
 import { useUserStore } from "@/store";
 
 export interface IWebAppReadyProps {}
@@ -13,6 +14,15 @@ export interface IWebAppReadyProps {}
 function WebAppReady(props: IWebAppReadyProps) {
   const setUserTmaInfo = useUserStore((state) => state.setUserTmaInfo);
   const isTmaInfoLoading = useUserStore((state) => state.isTmaInfoLoading);
+  const isUserLoading = useUserStore((state) => state.isUserLoading);
+  const userTmaInfo = useUserStore((state) => state.userTmaInfo);
+  const fetchUserAccount = useUserStore((state) => state.fetchUserAccount);
+
+  useEffect(() => {
+    if (isTmaInfoLoading && isUserLoading && userTmaInfo?.chat?.id) {
+      fetchUserAccount(userTmaInfo.chat.id.toString());
+    }
+  }, [isTmaInfoLoading, isUserLoading, fetchUserAccount, userTmaInfo]);
 
   useEffect(() => {
     if (
@@ -28,16 +38,20 @@ function WebAppReady(props: IWebAppReadyProps) {
   useEffect(() => {
     if (typeof window !== "undefined" && typeof self !== "undefined") {
       // if (process.env.NODE_ENV === "development") {
-      //   import("eruda").then((eruda) => {
-      //     eruda.default.init();
-      //   });
+      import("eruda").then((eruda) => {
+        eruda.default.init();
+      });
       // }
       WebApp.ready();
       WebApp.expand();
     }
   }, []);
 
-  return <div> </div>;
+  if (isUserLoading) {
+    return <div className={styles.loader}>Loading</div>;
+  }
+
+  return <></>;
 }
 
 export default WebAppReady;
