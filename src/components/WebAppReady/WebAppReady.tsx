@@ -25,7 +25,7 @@ function WebAppReady(props: IWebAppReadyProps) {
     }
   }, [isTmaInfoLoading, isUserLoading, fetchUserAccount, userTmaInfo]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined" && typeof self !== "undefined") {
       WebApp.ready();
       WebApp.expand();
@@ -35,9 +35,7 @@ function WebAppReady(props: IWebAppReadyProps) {
         eruda.default.init();
       });
     }
-  }, [setUserTmaInfo]);
-
-  console.log({ isUserLoading, isTmaInfoLoading });
+  }, [setUserTmaInfo, WebApp?.initDataUnsafe]);
 
   if (isUserLoading) {
     return (
@@ -47,7 +45,6 @@ function WebAppReady(props: IWebAppReadyProps) {
           isUserLoading,
           isTmaInfoLoading,
           id: userTmaInfo?.chat?.id,
-          webApp: WebApp.initDataUnsafe?.chat,
         })}
       </div>
     );
