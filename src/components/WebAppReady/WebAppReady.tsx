@@ -19,7 +19,7 @@ function WebAppReady(props: IWebAppReadyProps) {
   const fetchUserAccount = useUserStore((state) => state.fetchUserAccount);
 
   useEffect(() => {
-    if (isTmaInfoLoading && isUserLoading && userTmaInfo?.chat?.id) {
+    if (!isTmaInfoLoading && isUserLoading && userTmaInfo?.chat?.id) {
       fetchUserAccount(userTmaInfo.chat.id.toString());
     }
   }, [isTmaInfoLoading, isUserLoading, fetchUserAccount, userTmaInfo]);
