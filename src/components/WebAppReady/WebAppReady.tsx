@@ -48,6 +48,8 @@ function WebAppReady(props: IWebAppReadyProps) {
     }
   }, []);
 
+  console.log({ isUserLoading, isTmaInfoLoading });
+
   if (isUserLoading) {
     return <div className={styles.loader}>Loading</div>;
   }

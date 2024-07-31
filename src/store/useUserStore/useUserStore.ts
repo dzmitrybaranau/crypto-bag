@@ -117,6 +117,7 @@ export const useUserStore = create<UserStore>((set) => ({
       }));
     } catch (err) {
       console.log("ERROR", err);
+      set((state) => ({ ...state, isUserLoading: false }));
     } finally {
       set((state) => ({ ...state, isUserLoading: false }));
     }
