@@ -2,7 +2,7 @@
 
 import WebApp from "@twa-dev/sdk";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import styles from "./WebAppReady.module.scss";
 import { useUserStore } from "@/store";
 
@@ -25,7 +25,7 @@ function WebAppReady(props: IWebAppReadyProps) {
     }
   }, [isTmaInfoLoading, isUserLoading, fetchUserAccount, userTmaInfo]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (
       typeof window !== "undefined" &&
       typeof self !== "undefined" &&
@@ -34,7 +34,7 @@ function WebAppReady(props: IWebAppReadyProps) {
     ) {
       setUserTmaInfo(WebApp.initDataUnsafe);
     }
-  }, [isTmaInfoLoading, setUserTmaInfo]);
+  }, [isTmaInfoLoading, setUserTmaInfo, WebApp]);
 
   useEffect(() => {
     if (typeof window !== "undefined" && typeof self !== "undefined") {
