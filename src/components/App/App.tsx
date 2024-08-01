@@ -1,11 +1,8 @@
-"use client";
 import React from "react";
 import styles from "./App.module.scss";
 import TotalBalance from "@/components/TotalBalance/TotalBalance";
 import TokenList from "@/components/TokensList/TokenList";
 import TokenTransactionModal from "@/components/TokenTransactionModal/TokenTransactionModal";
-import Button from "@/components/TotalBalance/components/Button/Button";
-import WebApp from "@twa-dev/sdk";
 
 export interface IAppProps {}
 
@@ -15,15 +12,6 @@ export interface IAppProps {}
 function App(props: IAppProps) {
   return (
     <div className={styles.wrapper}>
-      <Button
-        onClick={() => {
-          if (typeof window !== "undefined") {
-            console.log({ WebApp });
-          }
-        }}
-      >
-        INI
-      </Button>
       <div className={styles.totalBalanceWrapper}>
         <TotalBalance />
       </div>
