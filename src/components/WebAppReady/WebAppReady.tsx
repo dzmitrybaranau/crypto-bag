@@ -1,8 +1,8 @@
 "use client";
 
 import WebApp from "@twa-dev/sdk";
-
-import React, { useEffect, useLayoutEffect } from "react";
+import dynamic from "next/dynamic";
+import React, { useEffect } from "react";
 import styles from "./WebAppReady.module.scss";
 import { useUserStore } from "@/store";
 
@@ -31,13 +31,9 @@ function WebAppReady(props: IWebAppReadyProps) {
       typeof self !== "undefined" &&
       WebApp
     ) {
-      // @ts-ignore
-      WebApp.ready(() => {
-        // @ts-ignore
-        WebApp.expand(() => {
-          setUserTmaInfo(WebApp?.initDataUnsafe);
-        });
-      });
+      WebApp.ready();
+      WebApp.expand();
+      setUserTmaInfo(WebApp?.initDataUnsafe);
 
       import("eruda").then((eruda) => {
         eruda.default.init();
@@ -61,4 +57,6 @@ function WebAppReady(props: IWebAppReadyProps) {
   return <></>;
 }
 
-export default WebAppReady;
+export default dynamic(() => Promise.resolve(WebAppReady), {
+  ssr: false,
+});

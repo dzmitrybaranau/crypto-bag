@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
+    "@tonconnect/ui-react": "^2.0.6",
     "@twa-dev/sdk": "^7.0.0",
     "axios": "^1.7.2",
     "eruda": "^3.2.1",
