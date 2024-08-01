@@ -19,7 +19,6 @@ function WebAppReady(props: IWebAppReadyProps) {
   const fetchUserAccount = useUserStore((state) => state.fetchUserAccount);
 
   useEffect(() => {
-    console.log({ isTmaInfoLoading, isUserLoading, id: userTmaInfo?.chat?.id });
     if (!isTmaInfoLoading && isUserLoading && userTmaInfo?.chat?.id) {
       fetchUserAccount(userTmaInfo.chat.id.toString());
     }
@@ -29,17 +28,20 @@ function WebAppReady(props: IWebAppReadyProps) {
     if (
       typeof window !== "undefined" &&
       typeof self !== "undefined" &&
-      WebApp
+      isTmaInfoLoading
     ) {
       WebApp.ready();
       WebApp.expand();
-      setUserTmaInfo(WebApp?.initDataUnsafe);
+
+      if (WebApp?.initDataUnsafe) {
+        setUserTmaInfo(WebApp?.initDataUnsafe);
+      }
 
       import("eruda").then((eruda) => {
         eruda.default.init();
       });
     }
-  }, [setUserTmaInfo, WebApp?.initDataUnsafe]);
+  }, [setUserTmaInfo]);
 
   if (isUserLoading) {
     return (
