@@ -50,6 +50,4 @@ function WebAppReady(props: IWebAppReadyProps) {
   return <></>;
 }
 
-export default dynamic(() => Promise.resolve(WebAppReady), {
-  ssr: false,
-});
+export default WebAppReady
