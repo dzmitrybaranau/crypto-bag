@@ -41,7 +41,7 @@ function TokenTransactionModal() {
         amount,
         price,
         userId,
-        type: "buy",
+        type: modalState.type,
       });
     }
 
