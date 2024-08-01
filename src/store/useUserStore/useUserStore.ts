@@ -1,9 +1,6 @@
 import { create } from "zustand";
 import WebApp from "@twa-dev/sdk";
-import { sellToken } from "@/store/useUserStore/sellToken";
 import { tokenTransaction } from "@/store/useUserStore/tokenTransaction";
-import axios from "axios";
-import { Database } from "@/types/database.types";
 import { fetchUserAccount } from "@/store/useUserStore/fetchUserAccount";
 
 export interface ITokenTransaction {
@@ -11,7 +8,6 @@ export interface ITokenTransaction {
   price: string;
   date: string;
   type: "buy" | "sell";
-  id?: string;
 }
 
 export interface IToken {

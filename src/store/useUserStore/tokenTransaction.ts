@@ -42,7 +42,6 @@ export const tokenTransaction = async ({
         price,
         date: new Date().toISOString(),
         type,
-        id: transaction.id,
       };
 
       return {
