@@ -20,8 +20,35 @@ export const tokenTransaction = async ({
   set: StoreApi<UserStore>["setState"];
   type: "buy" | "sell";
 }) => {
+  const newTransaction: ITokenTransaction = {
+    amount,
+    price,
+    date: new Date().toISOString(),
+    type,
+  };
+
+  set((state) => {
+    if (!state.userAccount) {
+      return state;
+    }
+
+    return {
+      ...state,
+      userAccount: {
+        ...state.userAccount,
+        tokenTransactions: {
+          ...state.userAccount.tokenTransactions,
+          [tokenId]: [
+            ...(state.userAccount.tokenTransactions[tokenId] || []),
+            newTransaction,
+          ],
+        },
+      },
+    };
+  });
+
   try {
-    const response = await axios.post("/api/tokenTransaction", {
+    await axios.post("/api/tokenTransaction", {
       userId,
       tokenSymbol: tokenId,
       tokenName: tokenId,
@@ -29,20 +56,11 @@ export const tokenTransaction = async ({
       price: parseFloat(price),
       type,
     });
-
-    const { transaction } = response.data;
-
+  } catch (error) {
     set((state) => {
       if (!state.userAccount) {
         return state;
       }
-
-      const newTransaction: ITokenTransaction = {
-        amount,
-        price,
-        date: new Date().toISOString(),
-        type,
-      };
 
       return {
         ...state,
@@ -51,14 +69,14 @@ export const tokenTransaction = async ({
           tokenTransactions: {
             ...state.userAccount.tokenTransactions,
             [tokenId]: [
-              ...(state.userAccount.tokenTransactions[tokenId] || []),
-              newTransaction,
+              ...(state.userAccount.tokenTransactions[tokenId] || []).filter(
+                (transaction) => transaction.date === newTransaction.date,
+              ),
             ],
           },
         },
       };
     });
-  } catch (error) {
     console.error("Error buying token:", error);
   }
 };
