@@ -5,7 +5,6 @@ import styles from "./AddTokenModal.module.scss";
 import Button from "@/components/TotalBalance/components/Button/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useUserStore } from "@/store";
-import { getAllTokens } from "@/utils/getAllTokens";
 import TokenForm from "@/components/TokenTransactionModal/components/TokenForm";
 
 /**
@@ -19,17 +18,15 @@ function TokenTransactionModal() {
     isOpen: false,
     type: "buy",
   });
-  const { buyToken, sellToken } = useUserStore((state) => ({
-    buyToken: state.buyToken,
-    sellToken: state.sellToken,
-  }));
+  const tokenTransaction = useUserStore((state) => state.tokenTransaction);
+  const userId = useUserStore((state) => state.userAccount?.id);
 
   const handleOpenModal = (type: "buy" | "sell") => () =>
     setModalState({ isOpen: true, type });
   const handleCloseModal = () =>
     setModalState({ ...modalState, isOpen: false });
 
-  const handleAddToken = ({
+  const handleTokenTransaction = ({
     amount,
     price,
     tokenId,
@@ -38,17 +35,13 @@ function TokenTransactionModal() {
     price: string;
     tokenId: string;
   }) => {
-    if (modalState.type === "buy") {
-      buyToken({
+    if (userId) {
+      tokenTransaction({
         tokenId,
         amount,
         price,
-      });
-    } else {
-      sellToken({
-        tokenId,
-        amount,
-        price,
+        userId,
+        type: "buy",
       });
     }
 
@@ -97,7 +90,7 @@ function TokenTransactionModal() {
           >
             <TokenForm
               type={modalState.type}
-              onSubmit={handleAddToken}
+              onSubmit={handleTokenTransaction}
               onClose={handleCloseModal}
             />
           </motion.div>

@@ -4,17 +4,17 @@ import supabase from "@/utils/supabase/supabaseClient";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const chatId = searchParams.get("chatId");
+  const userId = searchParams.get("userId");
 
-  if (!chatId) {
-    return NextResponse.json({ error: "No chatId provided" }, { status: 400 });
+  if (!userId) {
+    return NextResponse.json({ error: "No userId provided" }, { status: 400 });
   }
 
-  // Try to fetch the user by chatId
+  // Try to fetch the user by userId
   const { data: user, error: userError } = await supabase
     .from("users")
     .select("id")
-    .eq("id", parseInt(chatId))
+    .eq("id", parseInt(userId))
     .single();
 
   if (userError && userError.code !== "PGRST116") {
@@ -43,7 +43,7 @@ export async function GET(req: Request) {
     // No user found, create a new one
     const { data: newUser, error: insertError } = await supabase
       .from("users")
-      .insert([{ id: parseInt(chatId) }])
+      .insert([{ id: parseInt(userId) }])
       .select("id")
       .single();
 
