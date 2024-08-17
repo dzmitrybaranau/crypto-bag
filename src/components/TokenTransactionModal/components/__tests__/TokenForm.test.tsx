@@ -1,7 +1,7 @@
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import TokenForm from "@/components/TokenTransactionModal/components/TokenForm";
 import { useUserStore } from "@/store";
-import { useTokenPricesStore } from "@/store/useTokenPricesStore";
+import { useTokenPricesStore } from "@/store/useTokenPricesStore/useTokenPricesStore";
 import selectEvent from "react-select-event";
 import { ITokenTransaction } from "@/store/useUserStore/useUserStore";
 
@@ -21,7 +21,7 @@ jest.mock("@/store/useUserStore/useUserStore", () => ({
   }),
 }));
 
-jest.mock("@/store/useTokenPricesStore", () => ({
+jest.mock("@/store/useTokenPricesStore/useTokenPricesStore", () => ({
   useTokenPricesStore: jest.fn(() => ({
     tokenPrices: { BTC: 1 },
     setTokenPrice: jest.fn(),

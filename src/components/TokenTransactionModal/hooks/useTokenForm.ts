@@ -1,6 +1,6 @@
 import { ChangeEvent, MouseEventHandler, useEffect, useState } from "react";
 import { useUserStore } from "@/store";
-import { useTokenPricesStore } from "@/store/useTokenPricesStore";
+import { useTokenPricesStore } from "@/store/useTokenPricesStore/useTokenPricesStore";
 import { SingleValue } from "react-select";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
 import { ITokenTransaction } from "@/store/useUserStore/useUserStore";

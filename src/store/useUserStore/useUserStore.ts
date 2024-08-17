@@ -38,12 +38,14 @@ export interface UserStore {
     tokenId,
     userId,
     type,
+    dateISO,
   }: {
     tokenId: string;
     price: string;
     amount: string;
     userId: string;
     type: "sell" | "buy";
+    dateISO: string;
   }) => void;
 }
 

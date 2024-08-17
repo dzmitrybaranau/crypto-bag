@@ -3,7 +3,7 @@ import styles from "./TokenRow.module.scss";
 import { ITokenTransaction } from "@/store/useUserStore/useUserStore";
 import { getTokenById } from "@/utils/getTokenById";
 import { getTokenInfoFromHistory } from "@/utils/getTokenInfoFromHistory";
-import { useTokenPricesStore } from "@/store/useTokenPricesStore";
+import { useTokenPricesStore } from "@/store/useTokenPricesStore/useTokenPricesStore";
 import { formatDecimals } from "@/utils/formatDecimals";
 
 export interface ITokenRowProps {
