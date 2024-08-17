@@ -18,7 +18,7 @@ function TokenTransactionModal() {
     isOpen: false,
     type: "buy",
   });
-  const tokenTransaction = useUserStore((state) => state.tokenTransaction);
+  const tokenTransaction = useUserStore((state) => state.createTokenTransaction);
   const userId = useUserStore((state) => state.userAccount?.id);
 
   const handleOpenModal = (type: "buy" | "sell") => () =>

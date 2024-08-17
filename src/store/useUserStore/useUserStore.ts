@@ -32,7 +32,7 @@ export interface UserStore {
   fetchUserAccount: (userId: string) => Promise<void>;
   setUserTmaInfo: (userTmaInfo: typeof WebApp.initDataUnsafe) => void;
   userAccount?: IUserAccount;
-  tokenTransaction: ({
+  createTokenTransaction: ({
     amount,
     price,
     tokenId,
@@ -57,7 +57,7 @@ export const useUserStore = create<UserStore>((set) => ({
   isUserLoading: true,
   isTmaInfoLoading: true,
   userTmaInfo: undefined,
-  tokenTransaction: ({ tokenId, amount, price, userId, type }) =>
+  createTokenTransaction: ({ tokenId, amount, price, userId, type }) =>
     tokenTransaction({ set, tokenId, amount, price, type, userId }),
   fetchUserAccount: async (userId: string) => fetchUserAccount({ set, userId }),
   setUserTmaInfo: (userTmaInfo: typeof WebApp.initDataUnsafe) => {
