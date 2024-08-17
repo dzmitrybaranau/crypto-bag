@@ -45,7 +45,7 @@ export interface UserStore {
     amount: string;
     userId: string;
     type: "sell" | "buy";
-    dateISO: string;
+    dateISO?: string;
   }) => void;
 }
 
