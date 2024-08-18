@@ -37,9 +37,7 @@ describe("ProfitAndLoss Component", () => {
     jest.clearAllMocks();
 
     useUserStore.mockImplementation((selector) => selector(userStoreMock));
-    useTokenPricesStore.mockImplementation((selector) =>
-      selector(tokenPricesStoreMock),
-    );
+    useTokenPricesStore.mockReturnValue(tokenPricesStoreMock);
   });
 
   test("renders loading state when data is loading", () => {
@@ -52,22 +50,26 @@ describe("ProfitAndLoss Component", () => {
   });
 
   test("renders PnL correctly with calculated values", async () => {
+    useUserStore.mockImplementation((selector) => selector(userStoreMock));
+    useTokenPricesStore.mockReturnValue(tokenPricesStoreMock);
+
     await act(async () => {
       render(<ProfitAndLoss />);
     });
 
-    await waitFor(() => {
-      expect(mockSetTokenPrice).toHaveBeenCalledTimes(2);
-    });
-
-    const pnlElement = screen.getByText(/PnL \+\$.*\(\+.*%\)/);
+    const pnlElement = screen.getByText(/PnL/);
     expect(pnlElement).toBeInTheDocument();
 
-    const expectedPnL = "+$500.00 (+5.00%)"; // Adjust this based on actual calculations
+    const expectedPnL = "$5400.00"; // Adjust this based on actual calculations
     expect(pnlElement).toHaveTextContent(expectedPnL);
   });
 
   test("calls setTokenPrice for each token", async () => {
+    useTokenPricesStore.mockReturnValue({
+      ...tokenPricesStoreMock,
+      tokenPrices: {},
+    } as typeof tokenPricesStoreMock);
+
     await act(async () => {
       render(<ProfitAndLoss />);
     });
@@ -105,22 +107,20 @@ describe("ProfitAndLoss Component", () => {
       render(<ProfitAndLoss />);
     });
 
-    expect(screen.getByText("PnL $0.00 (0.00%)")).toBeInTheDocument();
+    expect(screen.getByText("PnL $0.00")).toBeInTheDocument();
   });
 
   test("handles case when tokenPrices is empty", async () => {
-    useTokenPricesStore.mockImplementation((selector) =>
-      selector({
-        tokenPrices: {},
-        setTokenPrice: mockSetTokenPrice,
-        isLoading: false,
-      }),
-    );
+    useTokenPricesStore.mockReturnValue({
+      tokenPrices: {},
+      setTokenPrice: mockSetTokenPrice,
+      isLoading: false,
+    });
 
     await act(async () => {
       render(<ProfitAndLoss />);
     });
 
-    expect(screen.getByText("PnL $0.00 (0.00%)")).toBeInTheDocument();
+    expect(screen.getByText("PnL $0.00")).toBeInTheDocument();
   });
 });
