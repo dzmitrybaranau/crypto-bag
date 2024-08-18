@@ -40,6 +40,43 @@ describe("ProfitAndLoss Component", () => {
     useTokenPricesStore.mockReturnValue(tokenPricesStoreMock);
   });
 
+  test("shows correct Loss", async () => {
+    useTokenPricesStore.mockReturnValue({
+      ...tokenPricesStoreMock,
+      tokenPrices: {
+        BTC: 5000,
+      },
+    } as typeof tokenPricesStoreMock);
+
+    useUserStore.mockImplementation((selector) =>
+      selector({
+        ...userStoreMock,
+        userAccount: {
+          tokenTransactions: {
+            BTC: [
+              { amount: "1", price: "30000", type: "buy", date: "2023-08-01" },
+              {
+                amount: "0.8",
+                price: "10000",
+                type: "sell",
+                date: "2023-08-02",
+              },
+            ],
+          },
+        },
+      } as typeof userStoreMock),
+    );
+    await act(async () => {
+      render(<ProfitAndLoss />);
+    });
+
+    const pnlElement = screen.getByText(/PnL/);
+    expect(pnlElement).toBeInTheDocument();
+
+    const expectedPnL = "$-21000.00";
+    expect(pnlElement).toHaveTextContent(expectedPnL);
+  });
+
   test("renders loading state when data is loading", () => {
     useUserStore.mockImplementation((selector) =>
       selector({ ...userStoreMock, isUserLoading: true }),
@@ -60,7 +97,7 @@ describe("ProfitAndLoss Component", () => {
     const pnlElement = screen.getByText(/PnL/);
     expect(pnlElement).toBeInTheDocument();
 
-    const expectedPnL = "$5400.00"; // Adjust this based on actual calculations
+    const expectedPnL = "$5400.00";
     expect(pnlElement).toHaveTextContent(expectedPnL);
   });
 
