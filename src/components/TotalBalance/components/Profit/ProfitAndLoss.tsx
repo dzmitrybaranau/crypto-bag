@@ -10,7 +10,7 @@ export interface IProfitProps {
  * Whole profit
  */
 function ProfitAndLoss({ amount }: IProfitProps) {
-  return <div className={styles.root}>PnL ${amount.toFixed(2)}</div>;
+  return <div className={styles.root}>PnL ${amount.toFixed(3)}</div>;
 }
 
 export default ProfitAndLoss;

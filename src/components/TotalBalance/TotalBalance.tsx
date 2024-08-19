@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import styles from "./TotalBalance.module.scss";
 import ProfitAndLoss from "@/components/TotalBalance/components/Profit/ProfitAndLoss";
@@ -21,23 +21,27 @@ function TotalBalance(props: ITotalBalanceProps) {
     tokensSpentUsdt,
   } = useTotalBalance();
 
-  if (isPricesLoading || isUserLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div className={styles.root}>
       <div className={styles.heading}>
         <h1 className={styles.text}>Total Balance</h1>{" "}
         <Image className={styles.logo} src={logoSrc} alt="Logo" />
       </div>
-      <h2 className={styles.balanceText}>${tokensTotalBalance}</h2>
-      <div className={styles.profitWrapper}>
-        <ProfitAndLoss amount={totalPnl} />
-      </div>
-      <div className={styles.spentWrapper}>
-        <Spent amount={tokensSpentUsdt} />
-      </div>
+      {!isUserLoading && !isPricesLoading ? (
+        <>
+          <h2 className={styles.balanceText}>
+            ${tokensTotalBalance.toFixed(3)}
+          </h2>
+          <div className={styles.profitWrapper}>
+            <ProfitAndLoss amount={totalPnl} />
+          </div>
+          <div className={styles.spentWrapper}>
+            <Spent amount={tokensSpentUsdt} />
+          </div>
+        </>
+      ) : (
+        <h2 className={styles.balanceText}>Loading...</h2>
+      )}
     </div>
   );
 }

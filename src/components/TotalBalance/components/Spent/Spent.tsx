@@ -8,7 +8,7 @@ export interface ISpentProps {
  * Spend overall
  */
 function Spent({ amount }: ISpentProps) {
-  return <div className={styles.root}>${amount} spent</div>;
+  return <div className={styles.root}>${amount.toFixed(3)} spent</div>;
 }
 
 export default Spent;
