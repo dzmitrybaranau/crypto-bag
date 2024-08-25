@@ -19,8 +19,6 @@ function calculateProfitLoss(
     }
   });
 
-  const change = usdtSpent - usdtGained;
-
   return {
     usdtAmountInHold: currentData.amount * currentData.currentPrice,
     usdtSpent,

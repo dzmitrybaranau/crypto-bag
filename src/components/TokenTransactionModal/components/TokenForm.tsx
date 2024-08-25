@@ -97,7 +97,15 @@ function TokenForm({ onSubmit, onClose, type }: ITokenFormProps) {
               "inset 0px -4px 2px #feb321, 0px 2px 2px rgba(169, 0,0,0.5)",
             marginTop: 32,
           }}
-          disabled={!price || !amount || !tokenId || !usdt}
+          disabled={
+            !price ||
+            !amount ||
+            !tokenId ||
+            !usdt ||
+            price === "0" ||
+            amount === "0" ||
+            usdt === "0"
+          }
           onClick={handleSubmit}
           type="submit"
         >

@@ -58,7 +58,6 @@ export const useTotalBalance = () => {
               amount: currentTokenInfo.amount,
               currentPrice: tokenPrice,
             });
-
           tokensSpentBalance[tokenKey] = usdtSpent;
           tokensPnl[tokenKey] = usdtGained - usdtSpent + usdtAmountInHold;
         }
@@ -88,5 +87,6 @@ export const useTotalBalance = () => {
     totalPnl,
     tokensTotalBalance,
     tokensSpentUsdt,
+    tokensPnl,
   };
 };
