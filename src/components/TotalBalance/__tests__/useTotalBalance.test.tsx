@@ -43,7 +43,10 @@ describe("useTotalBalance", () => {
     // BTC balance = -30000 + 17500 + 0.5 * 34000 = 4500
     // ETH balance = -4000 + 2500 + 1*2400 = 900
     const { result } = renderHook(useTotalBalance);
-    console.log({ t: result.current.tokensPnl });
+    console.log({ t: result.current });
     expect(result.current.totalPnl).toBe(5400);
+
+    // 34000 * 0.5 + 1 * 2400 = 19400
+    expect(result.current.tokensTotalBalance).toBe(19400);
   });
 });

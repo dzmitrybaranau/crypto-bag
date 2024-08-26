@@ -36,44 +36,42 @@ export const useTotalBalance = () => {
     isUserLoading,
   ]);
 
-  const { tokensPnl, tokensInfo, tokensSpentBalance } = useMemo(() => {
-    const tokensPnl: Record<string, number> = {};
-    const tokensInfo: Record<string, { amount: number; lastPrice: string }> =
-      {};
-    const tokensSpentBalance: Record<string, number> = {};
+  const { tokensPnl, tokensInfo, tokensSpentBalance, tokensTotalBalance } =
+    useMemo(() => {
+      const tokensPnl: Record<string, number> = {};
+      const tokensInfo: Record<string, { amount: number; lastPrice: string }> =
+        {};
+      const tokensSpentBalance: Record<string, number> = {};
+      const tokensTotalBalance: Record<string, number> = {};
 
-    if (
-      !isUserLoading &&
-      !isPricesLoading &&
-      Object.keys(tokenPrices).length !== 0
-    ) {
-      tokenKeys.forEach((tokenKey) => {
-        const tokenTransactions = userAccount?.tokenTransactions[tokenKey];
-        if (tokenTransactions) {
-          const tokenPrice = tokenPrices[tokenKey];
-          const currentTokenInfo = getTokenInfoFromHistory(tokenTransactions);
-          tokensInfo[tokenKey] = currentTokenInfo;
-          const { usdtGained, usdtSpent, usdtAmountInHold } =
-            calculateProfitAndLoss(tokenTransactions, {
-              amount: currentTokenInfo.amount,
-              currentPrice: tokenPrice,
-            });
-          tokensSpentBalance[tokenKey] = usdtSpent;
-          tokensPnl[tokenKey] = usdtGained - usdtSpent + usdtAmountInHold;
-        }
-      });
-    }
+      if (
+        !isUserLoading &&
+        !isPricesLoading &&
+        Object.keys(tokenPrices).length !== 0
+      ) {
+        tokenKeys.forEach((tokenKey) => {
+          const tokenTransactions = userAccount?.tokenTransactions[tokenKey];
+          if (tokenTransactions) {
+            const tokenPrice = tokenPrices[tokenKey];
+            const currentTokenInfo = getTokenInfoFromHistory(tokenTransactions);
+            tokensInfo[tokenKey] = currentTokenInfo;
+            const { usdtGained, usdtSpent, usdtAmountInHold } =
+              calculateProfitAndLoss(tokenTransactions, {
+                amount: currentTokenInfo.amount,
+                currentPrice: tokenPrice,
+              });
+            tokensTotalBalance[tokenKey] = currentTokenInfo.amount * tokenPrice;
+            tokensSpentBalance[tokenKey] = usdtSpent;
+            tokensPnl[tokenKey] = usdtGained - usdtSpent + usdtAmountInHold;
+          }
+        });
+      }
 
-    return { tokensPnl, tokensInfo, tokensSpentBalance };
-  }, [userAccount, isUserLoading, isPricesLoading, tokenKeys, tokenPrices]);
+      return { tokensPnl, tokensInfo, tokensSpentBalance, tokensTotalBalance };
+    }, [userAccount, isUserLoading, isPricesLoading, tokenKeys, tokenPrices]);
 
   const totalPnl = Object.values(tokensPnl).reduce(
     (prev, current) => current + prev,
-    0,
-  );
-
-  const tokensTotalBalance = Object.values(tokensInfo).reduce(
-    (prev, current) => prev + current.amount * parseFloat(current.lastPrice),
     0,
   );
 
@@ -85,7 +83,10 @@ export const useTotalBalance = () => {
     isUserLoading,
     isPricesLoading,
     totalPnl,
-    tokensTotalBalance,
+    tokensTotalBalance: Object.keys(tokensTotalBalance).reduce(
+      (prev, current) => prev + tokensTotalBalance[current],
+      0,
+    ),
     tokensSpentUsdt,
     tokensPnl,
   };
